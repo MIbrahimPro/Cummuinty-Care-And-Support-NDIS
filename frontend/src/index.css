@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    --font-aeonik: "Aeonik", ui-sans-serif, system-ui, sans-serif;
+
+    /*GREEN*/
+    --color-primary-dark: #3e5f44;
+    --color-primary: #5e936c;
+    --color-primary-light: #93da97;
+    --color-primary-pale: #e8ffd7;
+
+    /*BLUE*/
+    /* --color-primary-dark: #2a4b7c;
+    --color-primary: #4a7ab5;
+    --color-primary-light: #9dc1eb;
+    --color-primary-pale: #e6f1ff; */
+
+    --color-dark: #141414;
+    --color-light: #f7f7f7;
+}
+
+
+* {
+    cursor: none !important;
+}
+
+
+body {
+    background-color: var(--color-primary-pale);
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--color-dark);
+    overflow-x: hidden;
+}
+
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5E936C;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3E5F44;
+}

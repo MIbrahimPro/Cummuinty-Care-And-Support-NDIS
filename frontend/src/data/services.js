@@ -1,0 +1,42 @@
+export const servicesData = [
+    {
+        id: 1,
+        title: 'Personal Care',
+        description: 'Compassionate support with daily living activities, personal hygiene, and maintaining independence in your own home.',
+        image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',
+        fullDescription: 'Our personal care services are designed to help you maintain your independence while receiving the support you need. We provide assistance with bathing, dressing, grooming, and other daily activities.',
+        features: ['Bathing & Showering', 'Dressing Assistance', 'Grooming Support', 'Mobility Assistance'],
+    },
+    {
+        id: 2,
+        title: 'Community Access',
+        description: 'Enable meaningful participation in community activities, social events, and recreational programs tailored to your interests.',
+        image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80',
+        fullDescription: 'We help you stay connected with your community through supported outings, social activities, and participation in events that matter to you.',
+        features: ['Social Outings', 'Recreational Activities', 'Community Events', 'Skill Development'],
+    },
+    {
+        id: 3,
+        title: 'Household Tasks',
+        description: 'Professional assistance with cleaning, meal preparation, shopping, and maintaining a safe, comfortable living environment.',
+        image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80',
+        fullDescription: 'Our household support services ensure your home remains clean, organized, and comfortable, allowing you to focus on what matters most.',
+        features: ['House Cleaning', 'Meal Preparation', 'Shopping Assistance', 'Laundry Services'],
+    },
+    {
+        id: 4,
+        title: 'Respite Care',
+        description: 'Reliable short-term care providing families and carers with essential breaks while ensuring continuity of quality support.',
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80',
+        fullDescription: 'Give yourself peace of mind knowing your loved one is in capable, caring hands while you take the time you need to rest and recharge.',
+        features: ['In-Home Respite', 'Overnight Care', 'Emergency Support', 'Planned Breaks'],
+    },
+    {
+        id: 5,
+        title: 'Transport Support',
+        description: 'Safe and reliable transportation for appointments, social activities, shopping, and community participation.',
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80',
+        fullDescription: 'Our transport services ensure you can get where you need to go safely and on time, maintaining your independence and social connections.',
+        features: ['Medical Appointments', 'Social Activities', 'Shopping Trips', 'Community Events'],
+    },
+];
