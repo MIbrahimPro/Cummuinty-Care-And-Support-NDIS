@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CCAS | Community Care and Support Australia</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="./logo.png">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. VARIABLES & RESET --- */
+        :root {
+            --primary: #0B2447;
+            --primary-hover: #19376D;
+            --accent: #EDA345;
+            --bg-body: #FFFFFF;
+            --bg-light: #F8FAFC;
+            --text-dark: #111827;
+            --text-grey: #6B7280;
+            --border: #E2E8F0;
+
+            --font-head: 'Space Grotesk', sans-serif;
+            --font-body: 'Rubik', sans-serif;
+
+            --container: 1200px;
+            --radius: 12px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+            width: 100%;
+            position: relative;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- 2. ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        /* --- 3. LOADER --- */
+        .loader-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0B2447;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.4s ease-out; /* Faster transition */
+            transform: translateY(0); /* Added initial state */
+        }
+
+        .loader-logo {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 250px;
+            height: 6px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            transition: width 0.16s linear;
+        }
+
+        /* --- 4. LAYOUT UTILITIES --- */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-head);
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            border-color: #d97706;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* --- 5. HEADER --- */
+        header {
+            height: 90px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .brand span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-grey);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Remove hover line from the CTA button */
+        .nav-links .btn-primary::after {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* --- 6. HERO --- */
+        .hero {
+            position: relative;
+            background: var(--primary);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            min-height: calc(100vh - 90px); /* Adjusted for navbar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(11, 36, 71, 0.9), rgba(11, 36, 71, 0.7)),
+                url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffffff !important; /* Forces white */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Adds pop */
+        }
+
+        .hero p {
+            color: #e2e8f0;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* --- 7. ABOUT & VALUES --- */
+        .about-wrap {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-img {
+            flex: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 2.2rem;
+            color: var(--accent);
+            font-family: var(--font-head);
+            line-height: 1;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .v-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* --- 8. NEW: WHAT TO EXPECT --- */
+        .expect-wrap {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-direction: row-reverse;
+        }
+
+        .expect-img {
+            flex: 1;
+        }
+
+        .expect-text {
+            flex: 1;
+        }
+
+        .expect-list {
+            margin-top: 20px;
+        }
+
+        .expect-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .expect-list i {
+            color: var(--accent);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* --- 9. SERVICES (NEW LIST LAYOUT) --- */
+        .services-list {
+            border-top: 1px solid var(--border);
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            padding: 25px 15px;
+            border-bottom: 1px solid var(--border);
+            gap: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .service-item-text {
+            flex-grow: 1;
+        }
+        .service-item-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .service-item-text p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        .service-item-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            background-color: white;
+        }
+        .service-item:hover .service-item-arrow {
+            transform: translateX(8px);
+        }
+
+        .s-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: 0.4s;
+        }
+
+        .service-item:hover .s-icon {
+            background: var(--primary);
+            color: var(--accent);
+            transform: rotateY(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .service-item-arrow {
+                display: none; /* Hide arrow on mobile */
+            }
+        }
+        
+        /* --- 10. NEW: TESTIMONIALS --- */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Testimonial Hover Effect */
+        .testi-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease; /* smooth hover */
+        }
+
+        .testi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(11, 36, 71, 0.1);
+            border-color: var(--accent);
+        }
+
+        /* PFP Styling */
+        .testi-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .testi-pfp {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .testi-card::before {
+            content: '\f10d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 2rem;
+            color: #f3f4f6;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .testi-text {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+
+        .testi-user strong {
+            display: block;
+            color: var(--primary);
+            font-family: var(--font-head);
+        }
+
+        .testi-user span {
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        /* --- 11. NEW: BLOG CAROUSEL --- */
+        .blog-scroller {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 20px 40px 20px; /* Padding for shadow clearance */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            
+            /* Hide Scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE */
+            
+            /* Faded Edges Mask (Desktop) */
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .blog-scroller::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .blog-card {
+            flex: 0 0 350px;
+            scroll-snap-align: center;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .blog-content h4 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .blog-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Wrapper for scroller and buttons */
+        .blog-scroller-container {
+            position: relative;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+            display: none; /* Hidden by default, managed by JS */
+        }
+        .scroll-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .scroll-btn.left {
+            left: 0px;
+        }
+        .scroll-btn.right {
+            right: 0px;
+        }
+        
+        .scroll-btn.hidden {
+            display: none;
+        }
+
+        /* On desktop, show on hover. On touch, JS will manage visibility. */
+        @media (hover: hover) and (pointer: fine) {
+            .blog-scroller-container:hover .scroll-btn:not(.hidden) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .scroll-btn.left { left: -22px; }
+            .scroll-btn.right { right: -22px; }
+        }
+        
+        /* Adjustments for smaller screens to bring buttons inside */
+        @media (max-width: 768px) {
+             .scroll-btn.left { left: 5px; }
+             .scroll-btn.right { right: 5px; }
+             .scroll-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+             }
+        }
+
+        /* --- 12. JOURNEY (Process) --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: white;
+            padding: 40px 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+            position: relative;
+            /* Ensure z-index allows content to sit on top */
+            z-index: 1; 
+            overflow: hidden; 
+        }
+
+        .step:hover {
+            border-color: var(--accent);
+        }
+
+        /* Style for the big number behind */
+        .step-num {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            font-size: 6.5rem; 
+            font-weight: 800;
+            color: #f3f4f6;
+            z-index: 0;
+            opacity: 0.6;
+            line-height: 1;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .step h4, .step p {
+            position: relative;
+        }
+
+        /* --- 13. NEW: CONTACT FORM (Minimal Floating Label) --- */
+        .contact-wrap {
+            display: flex;
+            gap: 50px;
+            background: white;
+            padding: 50px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1.5;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        /* The Input Style */
+        .form-input {
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 2px solid #e5e7eb;
+            background: transparent;
+            outline: none;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-input:valid {
+            border-bottom-color: var(--accent);
+        }
+
+        /* The Floating Label */
+        .form-label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #9ca3af;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: 0.3s ease all;
+        }
+
+        /* Float up when focused or has text (valid) */
+        .form-input:focus~.form-label,
+        .form-input:valid~.form-label {
+            top: -15px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Custom Dropdown */
+        .custom-select-wrapper {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .custom-select-trigger {
+            position: relative;
+            width: 100%;
+            padding: 10px 0;
+            border-bottom: 2px solid #e5e7eb;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        .custom-select-trigger.active {
+            border-bottom-color: var(--accent);
+        }
+
+        .custom-select-trigger::after {
+            content: '\f078';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 0.8rem;
+            color: var(--text-grey);
+            transition: 0.3s;
+        }
+
+        .custom-select-trigger.active::after {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .custom-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: 0.3s;
+            
+            /* Ensure Vertical Stacking */
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+
+        .custom-options.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .custom-option {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: block; /* Forces new line */
+            width: 100%;
+        }
+
+        .custom-option:hover {
+            background: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .custom-option.selected {
+            background: var(--bg-light);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Hidden real input */
+        #service-input {
+            display: none;
+        }
+
+        /* --- 14. FOOTER --- */
+        footer {
+            background: #0F172A;
+            color: #94A3AF;
+            padding-top: 70px;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .copy {
+            border-top: 1px solid #1E293B;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .service-card {
+                flex: 0 1 calc(33.33% - 25px);
+            }
+
+            .about-wrap,
+            .expect-wrap,
+            .contact-wrap {
+                flex-direction: column;
+            }
+
+            .expect-wrap {
+                flex-direction: column;
+            }
+
+            /* Reset reverse on mobile */
+            .contact-form,
+            .contact-text {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: 0.4s ease, visibility 0.4s;
+                z-index: 1000;
+                padding: 40px;
+                box-sizing: border-box;
+                visibility: hidden;
+            }
+
+            .nav-links.active {
+                right: 0;
+                visibility: visible;
+            }
+
+            .nav-links .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .service-card {
+                flex: 0 1 100%;
+            }
+
+            .blog-card {
+                flex: 0 0 280px;
+            }
+
+            /* Smaller cards on mobile */
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div class="loader-wrap">
+        <div class="loader-logo">CCAS</div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-inner">
+            <div class="brand">
+                <h1>CCAS</h1>
+                <span>Community Care and Support Australia</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#services" onclick="toggleMenu()">Services</a>
+                <a href="#blog" onclick="toggleMenu()">Insights</a>
+                <a href="#contact-section" class="btn btn-primary" onclick="toggleMenu()">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content reveal">
+            <h1>Partnering in Your Independence</h1>
+            <p>A registered NDIS provider delivering dignified, person-centered support designed around your unique life
+                goals.</p>
+            <div class="hero-btns">
+                <a href="#contact-section" class="btn btn-primary">Book Consultation</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-wrap">
+                <div class="about-img reveal">
+                    <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2069&auto=format&fit=crop"
+                        alt="Care Team">
+                </div>
+                <div class="about-text reveal delay-100">
+                    <div class="section-header" style="text-align: left; margin: 0 0 20px 0;">
+                        <h2>Who We Are</h2>
+                    </div>
+                    <p>At CCAS, we understand that care is not just about tasks—it's about connection, trust, and
+                        empowerment. Our team of qualified professionals is dedicated to ensuring you have the "Choice
+                        and Control" to live the life you want.</p>
+                    <div class="stats">
+                        <div class="stat-item"><strong>100%</strong><span>NDIS Reg</span></div>
+                        <div class="stat-item"><strong>24/7</strong><span>Support</span></div>
+                        <div class="stat-item"><strong>50+</strong><span>Staff</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Services</h2>
+                <p>Comprehensive NDIS support tailored to your needs.</p>
+            </div>
+            <div class="services-list">
+                <!-- Service Item 1 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <div class="service-item-text">
+                        <h4>In-Home Care</h4>
+                        <p>Personal care, domestic assistance, and daily living support in the comfort of your home.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 2 -->
+                <div class="service-item reveal delay-100">
+                    <div class="s-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="service-item-text">
+                        <h4>Community Access</h4>
+                        <p>Building confidence and skills to participate in social and community activities.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="service-item reveal delay-200">
+                    <div class="s-icon"><i class="fa-solid fa-user-nurse"></i></div>
+                    <div class="service-item-text">
+                        <h4>Nursing Care</h4>
+                        <p>Specialized clinical and nursing support delivered by our registered professionals.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 4 -->
+                <div class="service-item reveal delay-300">
+                    <div class="s-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="service-item-text">
+                        <h4>Supported Living (SIL)</h4>
+                        <p>24/7 support in a shared living environment to foster independence.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 5 -->
+                 <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="service-item-text">
+                        <h4>Support Coordination</h4>
+                        <p>Helping you navigate the NDIS, connect with providers, and manage your plan.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 6 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-car"></i></div>
+                    <div class="service-item-text">
+                        <h4>Transport Services</h4>
+                        <p>Reliable travel and transport assistance for appointments and community outings.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 7 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <div class="service-item-text">
+                        <h4>Life Skills Development</h4>
+                        <p>Personalized training in areas like cooking, budgeting, and travel.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 8 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-bed"></i></div>
+                    <div class="service-item-text">
+                        <h4>Respite & STA</h4>
+                        <p>Short Term Accommodation and assistance to give carers and participants a break.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 9 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-broom"></i></div>
+                    <div class="service-item-text">
+                        <h4>Household Tasks</h4>
+                        <p>Assistance with cleaning, gardening, and maintaining a safe home environment.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <!-- Service Item 10 -->
+                <div class="service-item reveal">
+                    <div class="s-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="service-item-text">
+                        <h4>Therapeutic Supports</h4>
+                        <p>Access to a range of allied health professionals to support your wellbeing.</p>
+                    </div>
+                    <div class="service-item-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: WHAT TO EXPECT -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="expect-wrap">
+                <div class="expect-img reveal">
+                    <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop"
+                        alt="Discussion">
+                </div>
+                <div class="expect-text reveal delay-100">
+                    <div class="section-header" style="text-align: left; margin: 0 0 20px 0;">
+                        <h2>What to Expect</h2>
+                    </div>
+                    <p>Joining CCAS means joining a family. We prioritize open communication and consistency.</p>
+                    <ul class="expect-list">
+                        <li><i class="fa-solid fa-check"></i>
+                            <div><strong>Personalized Matching:</strong> We match you with workers who share your
+                                interests.</div>
+                        </li>
+                        <li><i class="fa-solid fa-check"></i>
+                            <div><strong>Regular Reviews:</strong> We check in often to ensure your plan evolves with
+                                you.</div>
+                        </li>
+                        <li><i class="fa-solid fa-check"></i>
+                            <div><strong>Transparent Costs:</strong> No hidden fees, strictly NDIS price guide
+                                compliant.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every interaction.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal"><i class="fa-solid fa-heart v-icon"></i>
+                    <h3>Compassion</h3>
+                    <p>We treat everyone with kindness and genuine care.</p>
+                </div>
+                <div class="value-card reveal delay-100"><i class="fa-solid fa-shield-halved v-icon"></i>
+                    <h3>Integrity</h3>
+                    <p>We are transparent, honest, and accountable.</p>
+                </div>
+                <div class="value-card reveal delay-200"><i class="fa-solid fa-hand-holding-hand v-icon"></i>
+                    <h3>Respect</h3>
+                    <p>We value your choices and your culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Participant Stories</h2>
+            <p>Hear from the people at the heart of our community.</p>
+        </div>
+        <div class="testi-grid">
+            <!-- Review 1 -->
+            <div class="testi-card reveal">
+                <p class="testi-text">"The team at CCAS has been incredible. They genuinely care about my son's goals and have helped him become so much more independent."</p>
+                <div class="testi-header">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" class="testi-pfp" alt="Sarah">
+                    <div class="testi-user"><strong>Sarah J.</strong><span>Parent</span></div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="testi-card reveal delay-100">
+                <p class="testi-text">"Reliable and professional. I finally feel like I have control over who comes into my home and how my support is delivered."</p>
+                <div class="testi-header">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" class="testi-pfp" alt="Michael">
+                    <div class="testi-user"><strong>Michael T.</strong><span>Participant</span></div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="testi-card reveal delay-200">
+                <p class="testi-text">"Support coordination made easy. They explained everything clearly and helped me utilize funds I didn't know I had available."</p>
+                <div class="testi-header">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" class="testi-pfp" alt="Elena">
+                    <div class="testi-user"><strong>Elena R.</strong><span>Participant</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- NEW: BLOG CAROUSEL -->
+    <section id="blog" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Latest Insights</h2>
+                <p>News and updates from the NDIS world.</p>
+            </div>
+            <div class="blog-scroller-container reveal">
+                <button class="scroll-btn left" id="scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="blog-scroller" id="blog-scroller">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"
+                            class="blog-img" alt="Blog 1">
+                        <div class="blog-content">
+                            <span class="blog-date">Oct 12, 2023</span>
+                            <h4>Understanding Your NDIS Plan</h4>
+                            <a href="#" class="blog-link">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://personifycorp.com/wp-content/uploads/2021/02/john-schnobrich-2FPjlAyMQTA-unsplash-scaled.jpg"
+                            class="blog-img" alt="Blog 2">
+                        <div class="blog-content">
+                            <span class="blog-date">Sep 28, 2023</span>
+                            <h4>Benefits of Community Access</h4>
+                            <a href="#" class="blog-link">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"
+                            class="blog-img" alt="Blog 3">
+                        <div class="blog-content">
+                            <span class="blog-date">Sep 10, 2023</span>
+                            <h4>Cooking for Independence</h4>
+                            <a href="#" class="blog-link">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=1000&auto=format&fit=crop"
+                            class="blog-img" alt="Blog 4">
+                        <div class="blog-content">
+                            <span class="blog-date">Aug 15, 2023</span>
+                            <h4>Supported Independent Living</h4>
+                            <a href="#" class="blog-link">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn right" id="scroll-right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY (Fixed Numbers) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Your Journey</h2>
+                <p>Simple steps to getting started.</p>
+            </div>
+            <div class="process-grid">
+                <div class="step reveal">
+                    <span class="step-num">01</span>
+                    <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+                    <h4>Contact</h4>
+                    <p>Call our friendly team.</p>
+                </div>
+                <div class="step reveal delay-100">
+                    <span class="step-num">02</span>
+                    <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <h4>Plan</h4>
+                    <p>We build your schedule.</p>
+                </div>
+                <div class="step reveal delay-200">
+                    <span class="step-num">03</span>
+                    <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Meet</h4>
+                    <p>Select your workers.</p>
+                </div>
+                <div class="step reveal delay-300">
+                    <span class="step-num">04</span>
+                    <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h4>Start</h4>
+                    <p>Begin your journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: CONTACT FORM -->
+    <section id="contact-section" class="section-padding bg-light">
+        <div class="container">
+            <div class="contact-wrap reveal">
+                <div class="contact-text">
+                    <h2>Let's Talk</h2>
+                    <p>Ready to discuss your needs? Fill out the form and our intake team will get back to you within 24
+                        hours.</p>
+                    <br>
+                    <p><strong><i class="fa-solid fa-phone" style="color:var(--accent)"></i> (02) 1234 5678</strong></p>
+                    <p><strong><i class="fa-solid fa-envelope" style="color:var(--accent)"></i>
+                            info@ccas.com.au</strong></p>
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <!-- Name -->
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-input" required>
+                            <label for="name" class="form-label">Full Name</label>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-input" required>
+                            <label for="email" class="form-label">Email Address</label>
+                        </div>
+
+                        <!-- Custom Dropdown -->
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select-trigger"><span>Select Service</span></div>
+                            <div class="custom-options">
+                                <span class="custom-option" data-value="in-home">In-Home Care</span>
+                                <span class="custom-option" data-value="community">Community Access</span>
+                                <span class="custom-option" data-value="nursing">Nursing Care</span>
+                                <span class="custom-option" data-value="sil">Supported Living (SIL)</span>
+                                <span class="custom-option" data-value="other">Other / General Inquiry</span>
+                            </div>
+                            <input type="hidden" id="service-input" name="service">
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <input type="text" id="message" class="form-input" required>
+                            <label for="message" class="form-label">Your Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5 style="color:white; margin-bottom:15px;">CCAS</h5>
+                    <p>Community Care and Support Australia.<br>Dignity, Respect, Integrity.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot" style="color:var(--accent)"></i> Sydney, NSW</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy">
+                &copy; 2023 CCAS. Acknowledgment of Country. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. MOBILE MENU
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+
+        // 2. LOADER
+        window.addEventListener('load', () => {
+            const bar = document.querySelector('.progress-bar');
+            const wrap = document.querySelector('.loader-wrap');
+            setTimeout(() => { bar.style.width = "5%"; }, 5);
+            setTimeout(() => { bar.style.width = "85%"; }, 165);
+            setTimeout(() => { bar.style.width = "95%"; }, 330);
+            setTimeout(() => {
+                bar.style.width = "100%";
+                setTimeout(() => {
+                    wrap.style.transform = 'translateY(100%)'; // Slide down
+                    wrap.style.opacity = '0';
+                    setTimeout(() => { wrap.style.visibility = 'hidden'; }, 400); // Hide after transition
+                }, 200);
+            }, 495);
+        });
+
+        // 3. SCROLL ANIMATION
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        });
+
+        // 4. CUSTOM DROPDOWN LOGIC
+        const selectTrigger = document.querySelector('.custom-select-trigger');
+        const selectOptions = document.querySelector('.custom-options');
+        const options = document.querySelectorAll('.custom-option');
+        const hiddenInput = document.getElementById('service-input');
+        const triggerSpan = selectTrigger.querySelector('span');
+
+        selectTrigger.addEventListener('click', () => {
+            selectOptions.classList.toggle('open');
+            selectTrigger.classList.toggle('active');
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', function () {
+                selectTrigger.classList.remove('active');
+                selectOptions.classList.remove('open');
+                triggerSpan.textContent = this.textContent;
+                triggerSpan.style.color = 'var(--primary)';
+                triggerSpan.style.fontWeight = '600';
+                hiddenInput.value = this.getAttribute('data-value');
+
+                // Visual selection state
+                options.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!selectTrigger.contains(e.target) && !selectOptions.contains(e.target)) {
+                selectTrigger.classList.remove('active');
+                selectOptions.classList.remove('open');
+            }
+        });
+
+        // 5. BLOG SCROLLER ARROWS
+        document.addEventListener('DOMContentLoaded', () => {
+            const scroller = document.getElementById('blog-scroller');
+            const btnLeft = document.getElementById('scroll-left');
+            const btnRight = document.getElementById('scroll-right');
+            const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+            if (!scroller) return;
+
+            const scrollAmount = 380; // Width of card + gap
+
+            const updateArrowVisibility = () => {
+                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+                // Use a small tolerance for floating point inaccuracies
+                btnLeft.classList.toggle('hidden', scroller.scrollLeft <= 1);
+                btnRight.classList.toggle('hidden', scroller.scrollLeft >= maxScroll - 1);
+                
+                // For touch devices, we want the buttons to be persistently visible if scrollable
+                if (isTouchDevice()) {
+                    btnLeft.style.display = scroller.scrollLeft > 1 ? 'flex' : 'none';
+                    btnRight.style.display = scroller.scrollLeft < maxScroll -1 ? 'flex' : 'none';
+                    btnLeft.style.alignItems = 'center';
+                    btnLeft.style.justifyContent = 'center';
+                    btnRight.style.alignItems = 'center';
+                    btnRight.style.justifyContent = 'center';
+                }
+            };
+
+            btnLeft.addEventListener('click', () => {
+                scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            btnRight.addEventListener('click', () => {
+                scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            // Update arrows when scrolling manually
+            scroller.addEventListener('scroll', () => {
+                // Use a timeout to avoid spamming the visibility check
+                setTimeout(updateArrowVisibility, 150);
+            });
+
+            // Initial check on load
+             setTimeout(updateArrowVisibility, 500); // Small delay for content to render
+        });
+
+    </script>
+</body>
+
+</html>
