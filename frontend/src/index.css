@@ -21,14 +21,15 @@
     --color-light: #f7f7f7;
 }
 
-
+/* 
 * {
     cursor: none !important;
-}
+} */
 
 
 body {
-    background-color: var(--color-primary-pale);
+    /* background-color: var(--color-primary-pale); */
+    background-color: var(-bg-slate-50);
     font-family: "Space Grotesk", sans-serif;
     color: var(--color-dark);
     overflow-x: hidden;

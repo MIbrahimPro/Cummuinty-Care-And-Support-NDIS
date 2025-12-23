@@ -6,6 +6,7 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import Phase3 from './pages/Phase3';
 // import About from './pages/About';
 // import Contact from './pages/Contact';
 // import Services from './pages/Services';
@@ -21,21 +22,22 @@ function App() {
     }, []);
 
     return (
-        <Router basename="/phase1">
+        <Router>
             {/* {loading ? ( */}
             {/* <Loader /> */}
             {/* ) : ( */}
             <>
-                <CustomCursor />
-                <Navbar />
+                {/* <CustomCursor /> */}
+                {/* <Navbar /> */}
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/three" element={<Phase3 />} />
                     {/* <Route path="/about" element={<About />} /> */}
                     {/* <Route path="/contact" element={<Contact />} /> */}
                     {/* <Route path="/services" element={<Services />} /> */}
                     {/* <Route path="/services/:id" element={<ServiceDetails />} /> */}
                 </Routes>
-                <Footer />
+                {/* <Footer /> */}
             </>
             {/* )} */}
         </Router>
