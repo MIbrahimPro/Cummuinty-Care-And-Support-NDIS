@@ -1,16 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import CustomCursor from './components/CustomCursor';
 // import Loader from './components/Loader';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Footer from './components/Footer';
-import Phase3 from './pages/Phase3';
-// import About from './pages/About';
-// import Contact from './pages/Contact';
-// import Services from './pages/Services';
-// import ServiceDetails from './pages/ServiceDetails';
+
+
+import Old from './App/old/old';
+import New from './App/new/new';
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -23,23 +18,12 @@ function App() {
 
     return (
         <Router>
-            {/* {loading ? ( */}
-            {/* <Loader /> */}
-            {/* ) : ( */}
             <>
-                {/* <CustomCursor /> */}
-                {/* <Navbar /> */}
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/three" element={<Phase3 />} />
-                    {/* <Route path="/about" element={<About />} /> */}
-                    {/* <Route path="/contact" element={<Contact />} /> */}
-                    {/* <Route path="/services" element={<Services />} /> */}
-                    {/* <Route path="/services/:id" element={<ServiceDetails />} /> */}
+                    <Route path="/*" element={<New />} />
+                    <Route path="/old" element={<Old />} />
                 </Routes>
-                {/* <Footer /> */}
             </>
-            {/* )} */}
         </Router>
     );
 }
