@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 import Old from './App/old/old';
 import New from './App/new/new';
+import New2 from './App/new2/new2';
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -20,8 +21,9 @@ function App() {
         <Router>
             <>
                 <Routes>
-                    <Route path="/*" element={<New />} />
-                    <Route path="/old" element={<Old />} />
+                    <Route path="/*" element={<New2 />} />
+                    <Route path="/old" element={<New />} />
+                    <Route path="/old2" element={<Old />} />
                 </Routes>
             </>
         </Router>
