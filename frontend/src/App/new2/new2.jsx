@@ -27,8 +27,11 @@ export default function New() {
                 <Route path="/services/:serviceSlug" element={<ServicesDetail />} />
                 <Route path="/services" element={<Services />} />
 
-                <Route path="/locations" element={<Locations />} />
-                <Route path="/locations/:locationSlug/:serviceSlug" element={<LocationsDetail />} />
+                {/* <Route path="/locations" element={<Locations />} />
+                <Route path="/locations/:locationSlug/:serviceSlug" element={<LocationsDetail />} /> */}
+
+                <Route path="/locations" element={<Home />} />
+                <Route path="/locations/:locationSlug/:serviceSlug" element={<Home />} />
 
 
 
