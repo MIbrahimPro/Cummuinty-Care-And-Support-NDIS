@@ -31,7 +31,7 @@ function Locations() {
                 ]}
                 imagePosition="left"
                 paragraphs={[
-                    "At Serenity Strides, we dedicate ourselves to helping enhance the lives of those in need of a helping hand. We strive to stand as a beacon of support across Ipswich, Logan and the greater Brisbane area, offering:"
+                    "At Community Care and Support, we dedicate ourselves to helping enhance the lives of those in need of a helping hand. We strive to stand as a beacon of support across Ipswich, Logan and the greater Brisbane area, offering:"
                 ]}
                 paragraphstwo={[
                     "We warmly extend our services to all NDIS participants and the wider community, ensuring no matter where you are, assistance can be just a call away. Reach out to us on 0418 730 264 or request a call back on this page."
