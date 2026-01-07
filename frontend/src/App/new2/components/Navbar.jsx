@@ -84,20 +84,20 @@ const Navbar = () => {
                         {/* Hamburger (Left) */}
                         <div className="w-[75px] flex justify-center items-center">
                             <button onClick={() => setIsOpen(true)} className="p-2">
-                                <Menu size={25} className="text-[#151f42]" />
+                                <Menu size={25} className="text-[#1CA4AC]" />
                             </button>
                         </div>
 
                         {/* Logo (Center) */}
                         <div className="flex-shrink-0">
-                            <div className="h-[100px] w-[100px] bg-[#151f42] rounded-full overflow-hidden flex items-center justify-center">
+                            <div className="h-[100px] w-[100px] bg-[#1CA4AC] rounded-full overflow-hidden flex items-center justify-center">
                                 <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
                             </div>
                         </div>
 
                         {/* Phone Icon (Right) */}
                         <div className="w-[75px] flex justify-center items-center">
-                            <a href={`tel:${siteData.telLink}`} className="text-[#151f42]">
+                            <a href={`tel:${siteData.telLink}`} className="text-[#1CA4AC]">
                                 <div className="p-2">
                                     <Phone size={25} className="text-cyan" />
                                 </div>
@@ -118,7 +118,7 @@ const Navbar = () => {
             `}
                     >
                         {/* Desktop Logo */}
-                        <div className={`bg-[#151f42] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-center ${isScrolled ? 'w-[100px] h-[100px]' : 'w-[110px] h-[110px]'}`}>
+                        <div className={`bg-[#1CA4AC] rounded-full overflow-hidden transition-all duration-500 flex items-center justify-center ${isScrolled ? 'w-[100px] h-[100px]' : 'w-[110px] h-[110px]'}`}>
                             <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
                         </div>
 
@@ -130,7 +130,7 @@ const Navbar = () => {
                         </nav>
 
                         {/* Desktop Call Button */}
-                        <a href={`tel:${siteData.telLink}`} className="bg-[#151f42] text-white font-inter text-[16px] font-bold px-[25px] py-[12px] rounded-[10px] hover:bg-[#158a91] transition-colors uppercase">
+                        <a href={`tel:${siteData.telLink}`} className="bg-[#1CA4AC] text-white font-inter text-[16px] font-bold px-[25px] py-[12px] rounded-[10px] hover:bg-[#158a91] transition-colors uppercase">
                             CALL {siteData.phoneNumber}
                         </a>
                     </div>
@@ -149,7 +149,7 @@ const MobileMenuItem = ({ item, level = 0 }) => {
     // Style Logic
     const isActive = item.title === 'Home'; // Placeholder logic
     const paddingClass = level === 0 ? "py-[12px]" : "py-[12px] px-[8px]";
-    const textClass = isActive ? "text-[#151f42] underline underline-offset-4" : "text-black";
+    const textClass = isActive ? "text-[#1CA4AC] underline underline-offset-4" : "text-black";
 
     return (
         <div className="w-full">
@@ -175,7 +175,7 @@ const DesktopMenuItem = ({ item }) => {
 
     return (
         <div className="relative group h-full flex items-center px-[10px]">
-            <a href={item.link} className="text-black hover:text-[#151f42] text-[14px] font-inter uppercase flex items-center transition-colors">
+            <a href={item.link} className="text-black hover:text-[#1CA4AC] text-[14px] font-inter uppercase flex items-center transition-colors">
                 {item.title}
                 {hasChildren && <ChevronDown size={14} className="ml-2" />}
             </a>
@@ -185,7 +185,7 @@ const DesktopMenuItem = ({ item }) => {
                 <div className="absolute top-full left-0 w-64 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-50">
                     {item.children.map((child, idx) => (
                         <div key={idx} className="relative group/nested border-b border-gray-50 last:border-0">
-                            <a href={child.link} className="block px-[15px] py-[15px] text-[14px] font-inter text-black hover:text-[#151f42] uppercase bg-white hover:bg-gray-50 flex justify-between items-center">
+                            <a href={child.link} className="block px-[15px] py-[15px] text-[14px] font-inter text-black hover:text-[#1CA4AC] uppercase bg-white hover:bg-gray-50 flex justify-between items-center">
                                 {child.title}
                                 {child.children && <ChevronRight size={14} />}
                             </a>
@@ -193,7 +193,7 @@ const DesktopMenuItem = ({ item }) => {
                             {child.children && (
                                 <div className="absolute top-0 left-full w-64 bg-white shadow-xl opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-300 transform translate-x-4 group-hover/nested:translate-x-0">
                                     {child.children.map((gc, gIdx) => (
-                                        <a key={gIdx} href={gc.link} className="block px-[15px] py-[15px] text-[14px] font-inter text-black hover:text-[#151f42] uppercase border-b border-gray-50 last:border-0 hover:bg-gray-50">
+                                        <a key={gIdx} href={gc.link} className="block px-[15px] py-[15px] text-[14px] font-inter text-black hover:text-[#1CA4AC] uppercase border-b border-gray-50 last:border-0 hover:bg-gray-50">
                                             {gc.title}
                                         </a>
                                     ))}

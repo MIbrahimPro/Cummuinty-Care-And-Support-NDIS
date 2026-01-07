@@ -123,7 +123,7 @@ const EnquiryFormPlaceholder = () => {
     return (
         <div className="bg-white rounded-lg shadow-xl p-8 w-full">
             <h3 className="text-[24px] font-nohemi font-bold text-black mb-4">
-                Enquire Serenity Strides in Logan
+                Enquire Community Care and Support in Logan
             </h3>
             <div className="space-y-4">
                 <div className="h-10 bg-gray-100 rounded w-full"></div>

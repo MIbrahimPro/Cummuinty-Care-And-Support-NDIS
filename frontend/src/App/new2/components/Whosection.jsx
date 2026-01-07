@@ -61,7 +61,7 @@ const WhoWeAreSection = () => {
                     </h3>
 
                     <p className="text-[16px] text-gray-700 leading-relaxed">
-                        At Serenity Strides, our values are the foundation of everything we do.
+                        At Community Care and Support, our values are the foundation of everything we do.
                         These values guide our approach to care, ensuring that we consistently
                         provide the highest standard of support to our participants.
                     </p>
@@ -79,7 +79,7 @@ const WhoWeAreSection = () => {
                     </div>
 
                     <p className="text-[16px] text-gray-700 leading-relaxed">
-                        At Serenity Strides, we are proud to be a part of the {renderSmartText("Ipswich")}, {renderSmartText("Logan")} and the greater {renderSmartText("Brisbane")} communities.
+                        At Community Care and Support, we are proud to be a part of the {renderSmartText("Ipswich")}, {renderSmartText("Logan")} and the greater {renderSmartText("Brisbane")} communities.
                         Our long-standing local presence, family-owned values, and unwavering commitment to our participants set us apart as a trusted provider of NDIS support services.
                     </p>
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({ icon, title }) => (
     <div className="flex items-center gap-4 bg-white p-6 rounded-lg shadow-md border border-gray-100 w-full lg:flex-1 min-h-[120px]">
-        <div className="w-16 h-16 flex-shrink-0 text-[#151f42] fill-current">
+        <div className="w-16 h-16 flex-shrink-0 text-[#1CA4AC] fill-current">
             {icon}
         </div>
         <h3 className="text-[#333] font-bold text-lg leading-tight lg:text-xl">

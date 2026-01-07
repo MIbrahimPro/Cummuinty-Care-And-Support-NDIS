@@ -27,7 +27,7 @@ function Contact() {
                     "Travel & Transport"
                 ]}
                 paragraphs={[
-                    "At Serenity Strides, believe in fostering a supportive and nurturing environment for all individuals. We offer comprehensive NDIS support throughout Ipswich, Logan and the greater Brisbane area, including:"
+                    "At Community Care and Support, believe in fostering a supportive and nurturing environment for all individuals. We offer comprehensive NDIS support throughout Ipswich, Logan and the greater Brisbane area, including:"
                 ]}
                 paragraphstwo={["If you, your loved ones or your clients require our assistance, please don't hesitate to get in touch. We're here to help empower and support you every step of the way."]}
                 showButton={true}

@@ -14,7 +14,7 @@ function Home() {
         <>
 
             <Hero
-                tagline="Serenity Strides"
+                tagline="Community Care and Support"
                 heading="Compassionate Support in Multiple Locations"
                 listItems={[
                     "Personalised support tailored to your specific needs",
@@ -38,7 +38,7 @@ function Home() {
                 ]}
                 imagePosition="left"
                 paragraphs={[
-                    "Welcome to Serenity Strides, your pathway to supportive and nurturing support throughout Ipswich, Logan and the greater Brisbane area. We understand the significance of fostering independence and community integration for those with disabilities. That's why we're dedicated to offering a comprehensive range of services designed to enrich the lives of our clients, including:"
+                    "Welcome to Community Care and Support, your pathway to supportive and nurturing support throughout Ipswich, Logan and the greater Brisbane area. We understand the significance of fostering independence and community integration for those with disabilities. That's why we're dedicated to offering a comprehensive range of services designed to enrich the lives of our clients, including:"
                 ]}
                 paragraphstwo={[
                     "With our passion for disability support and commitment to creating personalised, welcoming environments, we stand out as a family-owned business dedicated to the diverse needs of our community. To get started, contact us on 0418 730 264 or request a call back on this page."

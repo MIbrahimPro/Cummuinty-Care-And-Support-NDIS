@@ -11,11 +11,11 @@ const FAQSection = () => {
         },
         {
             question: "What types of disability support services are available?",
-            answer: "Serenity Strides offers a range of disability support services to patients in Ipswich and Logan and the greater Brisbane area, including personal care assistance, in-home support, community access programs and help with daily living tasks. These services are designed to ensure individuals can live safely and comfortably in their own homes while remaining active and connected within their community."
+            answer: "Community Care and Support offers a range of disability support services to patients in Ipswich and Logan and the greater Brisbane area, including personal care assistance, in-home support, community access programs and help with daily living tasks. These services are designed to ensure individuals can live safely and comfortably in their own homes while remaining active and connected within their community."
         },
         {
             question: "How do I access NDIS services if I am new to the NDIS?",
-            answer: "If you are new, you first need to confirm your eligibility. Once approved, you will have a planning meeting to determine your goals and budget, after which you can choose Serenity Strides as your provider."
+            answer: "If you are new, you first need to confirm your eligibility. Once approved, you will have a planning meeting to determine your goals and budget, after which you can choose Community Care and Support as your provider."
         }
     ];
 
