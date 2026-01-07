@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDownRight, Stethoscope, Check } from 'lucide-react'; // Example icons
+import ContactSection from './contactsec';
 
 const Hero = ({
     image,
@@ -9,10 +10,12 @@ const Hero = ({
     listItems = [],
     showCallback = true,
     hasForm = false,
+    location,
     onCallbackClick,
+    longer = false,
 }) => {
     return (
-        <section className="flex flex-col lg:flex-row w-full lg:h-[850px] relative">
+        <section className={`flex flex-col lg:flex-row w-full relative ${longer ? 'lg:h-[950px]' : ' lg:h-[850px]'}`}>
 
             {/* --- LEFT PANEL: TEXT CONTENT --- */}
             {/* Desktop: 40% width, 750px height. 
@@ -96,8 +99,7 @@ const Hero = ({
                     className="w-full h-full object-cover absolute inset-0 z-0"
                 />
 
-                {/* Overlay for aesthetics (optional, based on your images) */}
-                {/* <div className="absolute inset-0 bg-black/10 z-0"></div> */}
+                <div className="absolute inset-0 bg-black/10 z-0"></div>
 
                 {/* --- FORM OVERLAY VARIANT --- */}
                 {hasForm && (
@@ -107,7 +109,7 @@ const Hero = ({
                Or just centered nicely. Based on image_7899aa.jpg, it's a white card floating.
             */}
                         <div className="w-full max-w-lg lg:max-w-xl mx-auto">
-                            <EnquiryFormPlaceholder />
+                            <ContactSection requestOnly={false} showtimes={false} showMessage={true} customTitle={`Enquire Community Care and Support in ${location}`} />
                         </div>
                     </div>
                 )}
@@ -119,11 +121,11 @@ const Hero = ({
 
 
 // --- Placeholder Component for the Form ---
-const EnquiryFormPlaceholder = () => {
+const EnquiryForm = ({ location }) => {
     return (
         <div className="bg-white rounded-lg shadow-xl p-8 w-full">
             <h3 className="text-[24px] font-nohemi font-bold text-black mb-4">
-                Enquire Community Care and Support in Logan
+                Enquire Community Care and Support in {location}
             </h3>
             <div className="space-y-4">
                 <div className="h-10 bg-gray-100 rounded w-full"></div>

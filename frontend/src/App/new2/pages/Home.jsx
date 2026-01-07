@@ -26,6 +26,8 @@ function Home() {
                 showCallback={true}
             />
             <FeatureSection />
+            <ContactSection requestOnly={true} showMessage={false} />
+
             <SmartSection
                 title="Helping Foster Independence"
                 image="https://picsum.photos/1200"
@@ -45,10 +47,9 @@ function Home() {
                 ]}
                 showButton={true}
             />
-            <ContactSection requestOnly={true} />
             <ServiceList />
-            <WhoSection />
             <Passion />
+            <WhoSection />
             <FAQ />
             <Serloc />
         </>

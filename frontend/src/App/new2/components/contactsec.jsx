@@ -1,14 +1,10 @@
 import React from 'react';
 import { siteData } from '../data/data';
 
-/**
- * @param {boolean} requestOnly - If true, shows a centered card (like image_8725c6)
- * @param {boolean} showMessage - If false, hides the textarea (like image_8725ad)
- * @param {string} customTitle - Override the default "Get in Touch" or "Request a Call Back"
- */
 
 const ContactSection = ({
     requestOnly = false,
+    showtimes = !requestOnly,
     showMessage = true,
     customTitle = ""
 }) => {
@@ -23,8 +19,8 @@ const ContactSection = ({
     const displayTitle = customTitle || (requestOnly ? "Request a Call Back" : "Get in Touch");
 
     return (
-        <section className={`py-20 px-6 font-inter ${requestOnly ? 'bg-transparent' : 'bg-[#f0f0f0]'}`}>
-            <div className={`mx-auto ${requestOnly ? 'max-w-4xl' : 'max-w-6xl flex flex-col md:flex-row gap-8'}`}>
+        <section className={`py-20 px-6 font-inter ${showtimes ? 'bg-[#f0f0f0]' : 'bg-transparent'}`}>
+            <div className={`mx-auto ${showtimes ? 'max-w-6xl flex flex-col md:flex-row gap-8' : 'max-w-4xl'}`}>
 
                 {/* Main Form Card */}
                 <div className={`bg-white p-10 rounded-xl shadow-sm border border-gray-100 ${requestOnly ? 'text-center' : 'flex-grow'}`}>
@@ -33,7 +29,7 @@ const ContactSection = ({
                     </h2>
 
                     <form onSubmit={handleSubmit} className="space-y-6 text-left">
-                        <div className={`grid grid-cols-1 ${requestOnly ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6`}>
+                        <div className={`grid grid-cols-1 md:grid-cols-3  gap-6`}>
                             <div className="flex flex-col">
                                 <label className="text-[16px] mb-2 font-medium">Name:</label>
                                 <input
@@ -100,7 +96,7 @@ const ContactSection = ({
                 </div>
 
                 {/* Right Side: Contact Info Card (Hidden in Request Only Mode) */}
-                {!requestOnly && (
+                {showtimes && (
                     <div className="w-full md:w-[400px] bg-white p-10 rounded-xl shadow-sm">
                         <h2 className="text-[32px] font-nohemi font-bold text-gray-900 mb-8">Contact Us</h2>
                         <div className="space-y-6">

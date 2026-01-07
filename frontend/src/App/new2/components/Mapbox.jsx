@@ -11,7 +11,7 @@ const customIcon = new L.DivIcon({
     iconAnchor: [15, 30],
 });
 
-const FreeMapSection = () => {
+const MapBox = () => {
     // Coordinates for "unit 35, 54 outlook place, Durack 4077, QLD"
     const position = [-27.5913, 152.9734];
 
@@ -52,4 +52,4 @@ const FreeMapSection = () => {
     );
 };
 
-export default FreeMapSection;
+export default MapBox;

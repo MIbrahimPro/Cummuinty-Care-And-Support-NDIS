@@ -56,8 +56,8 @@ const SmartSection = ({
 
                 {/* Image Column */}
                 {!isCentered && image && (
-                    <div className="w-full lg:w-1/2">
-                        <div className="rounded-[24px] overflow-hidden shadow-md aspect-[4/3]">
+                    <div className="w-full lg:w-1/2 h-full">
+                        <div className="rounded-[24px] overflow-hidden shadow-md h-full ">
                             <img src={image} alt={title} className="w-full h-full object-cover" />
                         </div>
                     </div>
@@ -80,9 +80,18 @@ const SmartSection = ({
                     {listItems.length > 0 && (
                         <ul className={`grid grid-cols-1 gap-3 py-2 ${isCentered ? 'justify-items-center' : ''}`}>
                             {listItems.map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-3">
-                                    <Stethoscope size={18} className="text-cyan shrink-0" />
-                                    <span className="text-[16px] text-cyan font-bold">{item}</span>
+                                <li key={idx} className="flex items-start gap-3">
+                                    <Stethoscope size={18} className="text-cyan shrink-0 mt-1" />
+                                    <p className="text-[16px] text-gray-700 leading-relaxed">
+                                        {typeof item === 'object' && item.heading ? (
+                                            <>
+                                                <span className="font-bold text-gray-900">{item.heading}</span>{': '}
+                                                {item.text}
+                                            </>
+                                        ) : (
+                                            <>{typeof item === 'object' ? item.text : item}</>
+                                        )}
+                                    </p>
                                 </li>
                             ))}
                         </ul>
