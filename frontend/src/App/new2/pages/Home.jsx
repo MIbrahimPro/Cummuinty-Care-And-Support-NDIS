@@ -14,7 +14,7 @@ function Home() {
         <>
 
             <Hero
-                tagline="Community Care and Support"
+                tagline="Community Care and Support Australia"
                 heading="Compassionate Support in Multiple Locations"
                 listItems={[
                     "Personalised support tailored to your specific needs",
@@ -23,6 +23,7 @@ function Home() {
                     "Servicing Brisbane and the greater Brisbane area"
                 ]}
                 image="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                image2="https://picsum.photos/seed/picsum/1200/800"
                 showCallback={true}
             />
             <FeatureSection />

@@ -18,6 +18,7 @@ function Services() {
                 heading="NDIS Disability Support Services in Multiple Locations"
                 paragraph="Serving for Humanity"
                 image="https://lirp.cdn-website.com/401a0922/dms3rep/multi/opt/shutterstock_2433708081-2880w.jpg"
+                image2="https://picsum.photos/seed/picsum2/1200/800"
                 showCallback={true}
             />
             <ContactSection requestOnly={true} showMessage={false} />

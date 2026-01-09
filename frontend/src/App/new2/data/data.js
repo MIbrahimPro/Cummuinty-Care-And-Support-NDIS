@@ -6,7 +6,7 @@ export const siteData = {
     phoneNumber2: "0449 202 937",
     telLink2: "0449202937",
     email: "Info@communitycare.com.au",
-    Address: "unit 35, 54 outlook place, Durack 4077, QLD",
+    Address: "54 outlook place, Durack 4077, QLD",
     ABN: "12 684 957 819",
     menu: [
         { title: "Home", link: "/" },
@@ -111,9 +111,9 @@ export const servicesData = [
             image: "https://picsum.photos/1200",
             imagePosition: "left",
             paragraphs: [
-                "At Community Care and Support, we specialise in providing compassionate and personalised Supported Independent Living (SIL) services for individuals in Ipswich, Logan and the greater Brisbane area. Our primary clients include NDIS participants who seek to live independently while receiving the tailored support they need to thrive. We cater to individuals with various levels of disability, ensuring they can live comfortably and confidently within a nurturing environment.",
+                "At Community Care and Support Australia, we specialise in providing compassionate and personalised Supported Independent Living (SIL) services for individuals in Ipswich, Logan and the greater Brisbane area. Our primary clients include NDIS participants who seek to live independently while receiving the tailored support they need to thrive. We cater to individuals with various levels of disability, ensuring they can live comfortably and confidently within a nurturing environment.",
                 "Our SIL services are designed to promote independence while offering assistance with daily tasks, personal care, transport and community integration. As a local, family-owned business deeply rooted in the Ipswich community, we understand the unique needs of our participants and are committed to empowering them to lead fulfilling lives.",
-                "With a warm and supportive approach, Community Care and Support provides reliable, high-quality care that aligns with your goals and enhances your quality of life. To find out more about how we can support you, contact us on 0492 265 171 or request a call back on this page."
+                "With a warm and supportive approach, Community Care and Support Australia provides reliable, high-quality care that aligns with your goals and enhances your quality of life. To find out more about how we can support you, contact us on 0492 265 171 or request a call back on this page."
             ],
             showButton: true
         },
@@ -125,7 +125,7 @@ export const servicesData = [
                 [
                     "Supported Independent Living (SIL) is a service designed to help individuals with disabilities live as independently as possible while receiving support tailored to their needs. SIL typically includes assistance with daily tasks such as personal care, meal preparation and household management. The support may be provided in the individual’s own home or in shared living arrangements, depending on their preferences and circumstances.",
                     "SIL aims to go beyond basic care by aiming to promote skill development, encouraging community participation and fostering social connections. Participants can work closely with support workers to achieve personal goals, whether that involves learning new skills, improving independence or building relationships within the community. Each SIL plan is flexible and customised to the individual, helping ensure unique needs and preferences can be met.",
-                    "This service is vital in empowering individuals to live more meaningful, autonomous lives while providing the reassurance of ongoing support when needed. Contact Community Care and Support today."
+                    "This service is vital in empowering individuals to live more meaningful, autonomous lives while providing the reassurance of ongoing support when needed. Contact Community Care and Support Australia today."
                 ],
             showButton: true
         },
@@ -142,9 +142,9 @@ export const servicesData = [
             image: "https://picsum.photos/1200",
             imagePosition: "left",
             paragraphs: [
-                "Community Care and Support offers compassionate and personalised support for NDIS participants in Ipswich, Logan and the greater Brisbane area who live in shared accommodations. Our services focus on assisting with daily tasks, including cooking, cleaning and personal care, while fostering a collaborative and supportive living environment.",
+                "Community Care and Support Australia offers compassionate and personalised support for NDIS participants in Ipswich, Logan and the greater Brisbane area who live in shared accommodations. Our services focus on assisting with daily tasks, including cooking, cleaning and personal care, while fostering a collaborative and supportive living environment.",
                 "Our target audience includes individuals with disabilities who seek to maintain their independence within a shared living arrangement. We tailor our support to meet the unique needs of each participant, ensuring they can confidently manage daily responsibilities while enjoying the companionship of shared living.",
-                "As a local, family-owned business deeply connected to the Ipswich community, Community Care and Support is dedicated to empowering individuals to live fulfilling lives in a safe and nurturing environment. We also provide Supported Independent Living (SIL) services, community participation and transport. Contact us on 0418 730 264 or request a call back on this page."
+                "As a local, family-owned business deeply connected to the Ipswich community, Community Care and Support Australia is dedicated to empowering individuals to live fulfilling lives in a safe and nurturing environment. We also provide Supported Independent Living (SIL) services, community participation and transport. Contact us on 0418 730 264 or request a call back on this page."
             ],
             showButton: true
         },
@@ -170,7 +170,7 @@ export const servicesData = [
                 ],
             paragraphs2:
                 [
-                    "Supported daily tasks with Community Care and Support aims to empower individuals to enhance their independence while helping ensure essential daily needs are met in a shared space. Reach out today.",
+                    "Supported daily tasks with Community Care and Support Australia aims to empower individuals to enhance their independence while helping ensure essential daily needs are met in a shared space. Reach out today.",
                 ],
             showButton: true
         },
@@ -188,9 +188,9 @@ export const servicesData = [
             image: "https://picsum.photos/1200",
             imagePosition: "left",
             paragraphs: [
-                "At Community Care and Support, we provide warm and personalised assistance with household tasks for NDIS participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to help individuals with disabilities maintain a clean, organised and comfortable home environment, empowering them to live independently and confidently.",
+                "At Community Care and Support Australia, we provide warm and personalised assistance with household tasks for NDIS participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to help individuals with disabilities maintain a clean, organised and comfortable home environment, empowering them to live independently and confidently.",
                 "Our target audience includes NDIS participants who need support with everyday household activities such as cleaning, laundry and meal preparation. We tailor our services to meet each participant's unique needs, ensuring they can enjoy a safe and well-maintained home.",
-                "As a local, family-owned business with deep roots in Ipswich, Community Care and Support is committed to offering compassionate and reliable care that enhances the quality of life for our participants. We take pride in our professional yet warm approach, making us a trusted partner in your journey towards greater independence.",
+                "As a local, family-owned business with deep roots in Ipswich, Community Care and Support Australia is committed to offering compassionate and reliable care that enhances the quality of life for our participants. We take pride in our professional yet warm approach, making us a trusted partner in your journey towards greater independence.",
                 "To find out more about how we can support you, contact us on 0418 730 264 or request a call back on this page. We also provide Supported Independent Living (SIL) services, support for shared living, community participation and transport.",
             ],
             showButton: true
@@ -202,7 +202,7 @@ export const servicesData = [
             imagePosition: "right",
             paragraphs:
                 [
-                    "To support participants of varying needs, Community Care and Support can provide:",
+                    "To support participants of varying needs, Community Care and Support Australia can provide:",
                 ],
             listItems:
                 [
@@ -233,7 +233,7 @@ export const servicesData = [
                 "NDIS participants can benefit from support with household tasks, as it helps individuals with disabilities maintain a clean, safe and organised living environment while also promoting their independence. This type of support is designed to allow participants to live more independently by ensuring their home remains functional and comfortable, without overwhelming them with the demands of everyday chores.",
                 "For individuals with limited mobility or cognitive challenges, household task support can provide vital assistance, reducing stress and freeing up time for other activities like socialising, work or skill development. Participants are often encouraged to take part in household duties as much as they are able, helping to build life skills and confidence.",
                 "By tailoring the level of assistance to the participant’s specific needs, NDIS support workers can empower individuals to live more autonomously while maintaining a healthy and organised living space.",
-                "Contact Community Care and Support to get started."
+                "Contact Community Care and Support Australia to get started."
             ],
             showButton: true
         },
@@ -250,9 +250,9 @@ export const servicesData = [
             image: "https://picsum.photos/1200",
             imagePosition: "left",
             paragraphs: [
-                "Community Care and Support offers warm and personalised NDIS community participation services in Ipswich, Logan and the greater Brisbane area, designed to help individuals with disabilities engage fully in their community. Our services focus on fostering social connections, encouraging participation in local activities and building meaningful relationships that enhance the overall well-being of our participants.",
+                "Community Care and Support Australia offers warm and personalised NDIS community participation services in Ipswich, Logan and the greater Brisbane area, designed to help individuals with disabilities engage fully in their community. Our services focus on fostering social connections, encouraging participation in local activities and building meaningful relationships that enhance the overall well-being of our participants.",
                 "Our target audience includes NDIS participants who seek to be more active in their community, whether through social events, recreational activities or volunteering opportunities. We tailor our support to each individual’s interests and goals, empowering them to take part in community life with confidence and enjoyment.",
-                "As a local, family-owned business deeply embedded in the Ipswich community, Community Care and Support is committed to providing compassionate and professional care that supports our participants in leading fulfilling and socially connected lives.",
+                "As a local, family-owned business deeply embedded in the Ipswich community, Community Care and Support Australia is committed to providing compassionate and professional care that supports our participants in leading fulfilling and socially connected lives.",
                 "We also provide Supported Independent Living (SIL) services, daily task support, shared living support and transport. Contact us on 0418 730 264 or request a call back on this page.",
 
             ],
@@ -278,7 +278,7 @@ export const servicesData = [
                 [
                     "The program is designed to encourage inclusion and social interaction, helping participants to improve their communication and social skills. It can also assist in building self-confidence and fostering new relationships. Community participation may also include transport to and from activities, as well as the support of a worker to help individuals access the community safely and independently.",
                     "Participants can choose activities that reflect their interests and aspirations, making the program flexible and tailored to individual needs. This support plays a key role in enhancing social connections, well-being and community engagement.",
-                    "To learn more about how we can support you, enquire with Community Care and Support."
+                    "To learn more about how we can support you, enquire with Community Care and Support Australia."
                 ],
             showButton: true
         },
@@ -295,9 +295,9 @@ export const servicesData = [
             image: "https://picsum.photos/1200",
             imagePosition: "left",
             paragraphs: [
-                "Community Care and Support provides reliable and compassionate NDIS travel and transport services for participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to ensure safe and convenient transportation to medical appointments, social activities and community events, enabling participants to maintain their independence and stay connected with their community.",
+                "Community Care and Support Australia provides reliable and compassionate NDIS travel and transport services for participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to ensure safe and convenient transportation to medical appointments, social activities and community events, enabling participants to maintain their independence and stay connected with their community.",
                 "Our target audience includes NDIS participants who require assistance with travel and transport, ensuring they can access essential services and participate in the activities that matter most to them. We offer fully insured, accessible vehicles and caring companions who understand and cater to each participant's unique needs.",
-                "As a local, family-owned business, Community Care and Support is committed to delivering professional, warm and personalised support that enhances the quality of life for our participants in Ipswich, Logan and the greater Brisbane area. We also provide Supported Independent Living (SIL) services, as well as support for shared living and daily tasks. To find out how we can help meet your travel and transport needs, give us a call or request a call back on this page."
+                "As a local, family-owned business, Community Care and Support Australia is committed to delivering professional, warm and personalised support that enhances the quality of life for our participants in Ipswich, Logan and the greater Brisbane area. We also provide Supported Independent Living (SIL) services, as well as support for shared living and daily tasks. To find out how we can help meet your travel and transport needs, give us a call or request a call back on this page."
             ],
             showButton: true
         },
@@ -308,7 +308,7 @@ export const servicesData = [
             imagePosition: "right",
             paragraphs:
                 [
-                    "NDIS transport funding provided by Community Care and Support is designed to assist participants who have difficulty using public transport due to their disability. This funding can help individuals complete everyday errands, such as grocery shopping, attending medical appointments or participating in community events. Transport support may also be used for taxis, ride share services or community transport to—aiming to ensure participants can access essential services safely and independently.",
+                    "NDIS transport funding provided by Community Care and Support Australia is designed to assist participants who have difficulty using public transport due to their disability. This funding can help individuals complete everyday errands, such as grocery shopping, attending medical appointments or participating in community events. Transport support may also be used for taxis, ride share services or community transport to—aiming to ensure participants can access essential services safely and independently.",
                     "For those with support workers, NDIS funding also covers the assistance of these workers in driving participants to their appointments or activities. Whether it’s a trip to the doctor, a social gathering or a therapy session, our support workers can provide the necessary transportation and help participants to manage their schedules.",
                     "Transport funding can enhance independence by allowing participants to stay connected with their community and access the services they need without relying on family members or friends. By providing reliable transportation, the NDIS helps ensure participants can achieve their everyday goals and live more independently.",
                     "Contact us today.",
@@ -324,7 +324,7 @@ export const servicesData = [
                 [
                     "The program is designed to encourage inclusion and social interaction, helping participants to improve their communication and social skills. It can also assist in building self-confidence and fostering new relationships. Community participation may also include transport to and from activities, as well as the support of a worker to help individuals access the community safely and independently.",
                     "Participants can choose activities that reflect their interests and aspirations, making the program flexible and tailored to individual needs. This support plays a key role in enhancing social connections, well-being and community engagement.",
-                    "To learn more about how we can support you, enquire with Community Care and Support."
+                    "To learn more about how we can support you, enquire with Community Care and Support Australia."
                 ],
             showButton: true
         },

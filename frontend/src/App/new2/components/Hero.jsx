@@ -1,9 +1,11 @@
 import React from 'react';
-import { ArrowDownRight, Stethoscope, Check } from 'lucide-react'; // Example icons
+import { ArrowDownRight, Stethoscope } from 'lucide-react';
 import ContactSection from './contactsec';
 
 const Hero = ({
     image,
+    image2,
+    simpler = false,
     heading,
     tagline,
     paragraph,
@@ -14,46 +16,43 @@ const Hero = ({
     onCallbackClick,
     longer = false,
 }) => {
+    const leftPanelBgImage = simpler ? (image2 || image) : image2;
+
     return (
         <section className={`flex flex-col lg:flex-row w-full relative ${longer ? 'lg:h-[950px]' : ' lg:h-[850px]'}`}>
 
             {/* --- LEFT PANEL: TEXT CONTENT --- */}
-            {/* Desktop: 40% width, 750px height. 
-         Mobile: 100% width, auto height.
-         Padding: Top 200px (both), Bottom 100px (Desktop).
-      */}
-            <div className="w-full lg:w-[40%] bg-cyan text-white flex flex-col relative pt-[200px] pb-[100px] relative">
+            <div
+                className={`w-full ${simpler ? 'lg:w-full' : 'lg:w-[40%]'} text-white flex flex-col relative pt-[200px] pb-[100px]`}
+            >
+                {leftPanelBgImage && (
+                    <img src={leftPanelBgImage} alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
+                )}
+                <div
+                    className="absolute inset-0 z-0 bg-cyan"
+                    style={{ opacity: leftPanelBgImage ? 0.85 : 1 }}
+                ></div>
 
-                {/* Content Container (Handles the side padding) */}
-                <div className="px-6 lg:px-[80px] flex flex-col gap-[18px] justify-center items-center lg:items-start text-center lg:text-left flex-grow">
-
-                    {/* 1. Tagline (Optional) */}
+                <div className="relative z-10 px-6 lg:px-[80px] flex flex-col gap-[18px] justify-center items-center lg:items-start text-center lg:text-left flex-grow">
                     {tagline && (
-                        <span className="text-[20px] lg:text-[24px] font-inter opacity-90">
+                        <span className="text-[24px] lg:text-[32px] font-inter font-bold">
                             {tagline}
                         </span>
                     )}
-
-                    {/* 2. Heading (Required) */}
                     <h1 className="text-[36px] lg:text-[48px] font-nohemi font-bold leading-tight">
                         {heading}
                     </h1>
-
-                    {/* 3. Paragraph (Optional) */}
                     {paragraph && (
                         <div className="text-[16px] font-inter opacity-90 max-w-md">
                             {paragraph}
                         </div>
                     )}
-
-                    {/* 4. List (Optional) */}
                     {listItems.length > 0 && (
                         <ul className="flex flex-col gap-[8px] mt-2 w-full items-center lg:items-start">
                             {listItems.map((item, index) => (
-                                <li key={index} className="flex items-start gap-[10px] text-[16px] font-inter">
+                                <li key={index} className="flex items-start gap-[10px] text-[18px] font-inter font-bold text-black">
                                     <div className="mt-1 flex-shrink-0">
-                                        {/* Default Icon: User/Check or passed via item object if complex */}
-                                        <Stethoscope size={16} className="text-white" />
+                                        <Stethoscope size={18} className="text-teal-900" />
                                     </div>
                                     <span>{item}</span>
                                 </li>
@@ -62,65 +61,42 @@ const Hero = ({
                     )}
                 </div>
 
-                {/* 5. Request Call Back Button 
-            - Stick to bottom on Desktop
-            - Full Width of the panel
-            - Padding 80px sides to match content alignment
-        */}
                 {showCallback && (
                     <button
                         onClick={onCallbackClick}
-                        className="w-full bg-dark mt-10 lg:mt-auto py-[10px] px-6 lg:px-[80px] flex justify-between items-center group cursor-pointer hover:bg-gray-800 transition-colors absolute bottom-0 left-0 right-0"
+                        className="absolute bottom-0 left-0 right-0 z-10 w-full bg-dark py-[10px] px-6 lg:px-[80px] flex justify-between items-center group cursor-pointer hover:bg-gray-800 transition-colors"
                     >
                         <span className="text-[24px] lg:text-[36px] font-inter font-normal text-white">
                             Request a Call Back
                         </span>
-
-                        {/* Circle Icon */}
                         <div className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center transform group-hover:scale-105 transition-transform">
-                            {/* Arrow tilted bottom right */}
                             <ArrowDownRight size={24} className="text-cyan stroke-[2px]" />
                         </div>
                     </button>
                 )}
             </div>
 
-
-            {/* --- RIGHT PANEL: IMAGE / FORM --- */}
-            {/* Desktop: 60% width, 750px height.
-         Mobile: 100% width, Height depends on content/aspect ratio.
-      */}
-            <div className="w-full lg:w-[60%] relative h-[400px] lg:h-auto bg-gray-200">
-
-                {/* Background Image */}
-                <img
-                    src={image}
-                    alt="Hero"
-                    className="w-full h-full object-cover absolute inset-0 z-0"
-                />
-
-                <div className="absolute inset-0 bg-black/10 z-0"></div>
-
-                {/* --- FORM OVERLAY VARIANT --- */}
-                {hasForm && (
-                    <div className="absolute inset-0 z-10 flex items-center justify-center p-4 lg:p-0">
-                        {/* Form Container Styles:
-               Desktop padding reference: "200 top, 100 bottom, 80 sides" relative to the image block?
-               Or just centered nicely. Based on image_7899aa.jpg, it's a white card floating.
-            */}
-                        <div className="w-full max-w-lg lg:max-w-xl mx-auto">
-                            <ContactSection requestOnly={false} showtimes={false} showMessage={true} customTitle={`Enquire Community Care and Support in ${location}`} />
+            {!simpler && (
+                <div className="w-full lg:w-[60%] relative h-[400px] lg:h-auto bg-gray-200">
+                    <img
+                        src={image}
+                        alt="Hero"
+                        className="w-full h-full object-cover absolute inset-0 z-0"
+                    />
+                    <div className="absolute inset-0 bg-black/10 z-0"></div>
+                    {hasForm && (
+                        <div className="absolute inset-0 z-10 hidden lg:flex items-center justify-center p-4 lg:p-0">
+                            <div className="w-full max-w-lg lg:max-w-xl mx-auto">
+                                <ContactSection requestOnly={false} showtimes={false} showMessage={true} customTitle={`Enquire Community Care and Support in ${location}`} />
+                            </div>
                         </div>
-                    </div>
-                )}
-            </div>
-
+                    )}
+                </div>
+            )}
         </section>
     );
 };
 
-
-// --- Placeholder Component for the Form ---
 const EnquiryForm = ({ location }) => {
     return (
         <div className="bg-white rounded-lg shadow-xl p-8 w-full">

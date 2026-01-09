@@ -10,8 +10,11 @@ function Contact() {
 
             <Hero
                 heading="Contact Our Team"
-                image="https://images.unsplash.com/photo-1529397938791-2aba4681454f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=800lohttps://picsum.photos/200"
+                tagline="Community Care and Support Australia"
+                paragraph="We're here to help. Contact us for any inquiries or to get started with our services."
+                image="https://picsum.photos/1200/800"
                 showCallback={false} // Hidden for this page
+                simpler={true}
             />
             <ContactSection />
             <MapSection />

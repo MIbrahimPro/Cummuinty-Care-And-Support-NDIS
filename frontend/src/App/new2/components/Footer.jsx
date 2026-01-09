@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { siteData } from '../data/data';
+import Toggle from './Toggle';
 
 const Footer = () => {
-    // Extracting Service Areas and What We Do from siteData
+    const [openToggle, setOpenToggle] = useState(null);
+
+    const handleToggle = (title) => {
+        setOpenToggle(openToggle === title ? null : title);
+    };
+
     const serviceAreas = siteData.menu.find(item => item.title === "Service Areas")?.children || [];
     const whatWeDo = siteData.menu.find(item => item.title === "What We Do")?.children || [];
 
     return (
         <footer className="bg-[#2a2a2a] text-white py-20 px-6 md:px-12 font-inter">
             <div className="max-w-[1440px] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
                     {/* Column 1: Logo & Tagline */}
-                    <div className="lg:col-span-1 space-y-8">
+                    <div className="lg:col-span-1 space-y-8 flex flex-col items-center text-center">
                         <img
                             src="/logo.png"
                             alt="Logo"
-                            className="h-24 w-24 object-contain rounded-full"
+                            className="h-48 w-48 object-contain rounded-full mx-auto"
                         />
                         <h2 className="text-[38px] font-bold leading-tight">
                             Providing the <br /> Support You Need
@@ -50,39 +56,30 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Column 3 & 4: All Locations (Mapped Dynamically) */}
-                    {/* We split the locations into two columns to fill the footer better */}
-                    <div className="space-y-10">
-                        {serviceAreas.slice(0, 3).map((area, idx) => (
-                            <div key={idx}>
-                                <h3 className="text-[16px] font-bold uppercase mb-6">Services in {area.title}</h3>
-                                <ul className="space-y-3 text-[16px] uppercase text-zinc-300">
-                                    {area.children?.map((child, cIdx) => (
-                                        <li key={cIdx}>
-                                            <a href={child.link} className="hover:text-cyan-800 transition-colors">{child.title}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                    {/* Column 3: Locations */}
+                    <div className="space-y-6">
+                        {serviceAreas.map((area, idx) => {
+                            const title = `Services in ${area.title}`;
+                            return (
+                                <Toggle
+                                    key={idx}
+                                    title={title}
+                                    isOpen={openToggle === title}
+                                    onToggle={() => handleToggle(title)}
+                                >
+                                    <ul className="space-y-3 text-[16px] uppercase text-zinc-300">
+                                        {area.children?.map((child, cIdx) => (
+                                            <li key={cIdx}>
+                                                <a href={child.link} className="hover:text-cyan-800 transition-colors">{child.title}</a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </Toggle>
+                            );
+                        })}
                     </div>
 
-                    <div className="space-y-10">
-                        {serviceAreas.slice(3).map((area, idx) => (
-                            <div key={idx}>
-                                <h3 className="text-[16px] font-bold uppercase mb-6">Services in {area.title}</h3>
-                                <ul className="space-y-3 text-[16px] uppercase text-zinc-300">
-                                    {area.children?.map((child, cIdx) => (
-                                        <li key={cIdx}>
-                                            <a href={child.link} className="hover:text-cyan-800 transition-colors">{child.title}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Column 5: Contacts & Support Hours */}
+                    {/* Column 4: Contacts & Support Hours */}
                     <div className="space-y-10">
                         <div>
                             <h3 className="text-[16px] font-bold uppercase mb-6">Contacts</h3>
