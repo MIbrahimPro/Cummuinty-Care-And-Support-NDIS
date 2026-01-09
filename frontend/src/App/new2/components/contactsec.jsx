@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { siteData } from '../data/data';
+import { siteData, servicesData } from '../data/data';
 
 const ContactSection = ({
     requestOnly = false,
@@ -30,9 +30,13 @@ const ContactSection = ({
         const submissionData = new FormData();
         submissionData.append("access_key", "69101859-4381-403e-9863-fcee0e7365b7");
 
-        // Add all fields from state
+        // Add all fields from state, conditionally handling the service
         Object.keys(formData).forEach(key => {
-            submissionData.append(key, formData[key]);
+            if (key === 'service' && formData[key] === 'Select Service') {
+                submissionData.append(key, ''); // Send empty if not selected
+            } else {
+                submissionData.append(key, formData[key]);
+            }
         });
 
         const submitPromise = fetch("https://api.web3forms.com/submit", {
@@ -125,9 +129,9 @@ const ContactSection = ({
                                         className="bg-[#ebebeb] p-3 rounded-md outline-none focus:ring-1 focus:ring-cyan appearance-none"
                                     >
                                         <option value="Select Service">Select Service</option>
-                                        <option value="SIL Support">SIL Support</option>
-                                        <option value="Community Access">Community Access</option>
-                                        <option value="Household Tasks">Household Tasks</option>
+                                        {servicesData.map(service => (
+                                            <option key={service.id} value={service.title}>{service.title}</option>
+                                        ))}
                                     </select>
                                 </div>
                             ) : (
