@@ -28,7 +28,7 @@ function ServiceDetails() {
                 image={service.image}
                 showCallback={true}
             />
-            <ContactSection requestOnly={true} showMessage={false} />
+            <ContactSection requestOnly={true} showMessage={false} defaultService={service.title} />
 
             {service.ss1 && (
                 <SmartSection

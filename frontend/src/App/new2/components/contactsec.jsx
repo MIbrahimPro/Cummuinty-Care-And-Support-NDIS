@@ -6,15 +6,18 @@ const ContactSection = ({
     requestOnly = false,
     showtimes = !requestOnly,
     showMessage = true,
-    customTitle = ""
+    customTitle = "",
+    locationSet = "",
+    defaultService = "Select Service"
 }) => {
     // 1. State to handle form data
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
         email: "",
-        service: "Select Service",
-        message: ""
+        service: defaultService,
+        message: "",
+        location: locationSet || ""
     });
 
     // 2. Helper to update state on input change
@@ -50,8 +53,9 @@ const ContactSection = ({
                     name: "",
                     phone: "",
                     email: "",
-                    service: "Select Service",
-                    message: ""
+                    service: defaultService,
+                    message: "",
+                    location: locationSet || ""
                 });
                 return result;
             } else {
@@ -94,6 +98,7 @@ const ContactSection = ({
                     </h2>
 
                     <form onSubmit={handleSubmit} className="space-y-6 text-left">
+                        <input type="hidden" name="location" value={formData.location} />
                         <div className={`grid grid-cols-1 md:grid-cols-3 gap-6`}>
                             <div className="flex flex-col">
                                 <label className="text-[16px] mb-2 font-medium">Name:</label>

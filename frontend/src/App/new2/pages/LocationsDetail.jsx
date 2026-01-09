@@ -72,7 +72,7 @@ function LocationsDetail() {
                 />
             )}
 
-            <ContactSection requestOnly={false} showMessage={true} />
+            <ContactSection requestOnly={false} showMessage={true} locationSet={location.title} defaultService={service.title} />
             <MapBox />
             <FAQ />
             <Passion />
