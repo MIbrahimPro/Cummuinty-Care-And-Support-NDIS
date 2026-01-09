@@ -22,27 +22,25 @@ const ContactSection = ({
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // 3. Helper for Netlify Encoding
-    const encode = (data) => {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&");
-    };
-
-    // 4. The Submit Logic
-    const handleSubmit = (e) => {
+    // 3. The Submit Logic (Web3Forms API)
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Trigger a "Loading" toast that turns into Success or Error
-        const submitPromise = fetch("/", {
+        // Prepare the data for Web3Forms
+        const submissionData = new FormData();
+        submissionData.append("access_key", "69101859-4381-403e-9863-fcee0e7365b7");
+
+        // Add all fields from state
+        Object.keys(formData).forEach(key => {
+            submissionData.append(key, formData[key]);
+        });
+
+        const submitPromise = fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": "contact-form",
-                ...formData
-            })
-        })
-            .then(() => {
+            body: submissionData
+        }).then(async (res) => {
+            const result = await res.json();
+            if (result.success) {
                 // Reset form on success
                 setFormData({
                     name: "",
@@ -51,9 +49,13 @@ const ContactSection = ({
                     service: "Select Service",
                     message: ""
                 });
-            });
+                return result;
+            } else {
+                throw new Error(result.message || "Failed to send");
+            }
+        });
 
-        // This handles the cool animations automatically
+        // Beautiful Toast Notifications
         toast.promise(submitPromise, {
             loading: 'Sending your message...',
             success: <b>Message sent! We will contact you soon.</b>,
@@ -66,7 +68,7 @@ const ContactSection = ({
             success: {
                 duration: 5000,
                 iconTheme: {
-                    primary: '#06b6d4', // Matches your 'cyan' usage
+                    primary: '#06b6d4',
                     secondary: '#fff',
                 },
             },
@@ -78,7 +80,6 @@ const ContactSection = ({
 
     return (
         <section className={`py-20 px-6 font-inter ${showtimes ? 'bg-[#f0f0f0]' : 'bg-transparent'}`}>
-            {/* This renders the notifications on top of the screen */}
             <Toaster position="bottom-center" reverseOrder={false} />
 
             <div className={`mx-auto ${showtimes ? 'max-w-6xl flex flex-col md:flex-row gap-8' : 'max-w-4xl'}`}>
@@ -88,21 +89,13 @@ const ContactSection = ({
                         {displayTitle}
                     </h2>
 
-                    <form
-                        onSubmit={handleSubmit}
-                        className="space-y-6 text-left"
-                        data-netlify="true" // Required for Netlify
-                        name="contact-form" // Required for Netlify
-                    >
-                        {/* Hidden input required for Netlify to recognize the form */}
-                        <input type="hidden" name="form-name" value="contact-form" />
-
+                    <form onSubmit={handleSubmit} className="space-y-6 text-left">
                         <div className={`grid grid-cols-1 md:grid-cols-3 gap-6`}>
                             <div className="flex flex-col">
                                 <label className="text-[16px] mb-2 font-medium">Name:</label>
                                 <input
                                     type="text"
-                                    name="name" // Distinct Name
+                                    name="name"
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
@@ -114,7 +107,7 @@ const ContactSection = ({
                                 <label className="text-[16px] mb-2 font-medium">Phone:</label>
                                 <input
                                     type="tel"
-                                    name="phone" // Distinct Name
+                                    name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
                                     required
@@ -126,15 +119,15 @@ const ContactSection = ({
                                 <div className="flex flex-col">
                                     <label className="text-[16px] mb-2 font-medium">How Can We Help?</label>
                                     <select
-                                        name="service" // Distinct Name
+                                        name="service"
                                         value={formData.service}
                                         onChange={handleChange}
                                         className="bg-[#ebebeb] p-3 rounded-md outline-none focus:ring-1 focus:ring-cyan appearance-none"
                                     >
-                                        <option>Select Service</option>
-                                        <option>SIL Support</option>
-                                        <option>Community Access</option>
-                                        <option>Household Tasks</option>
+                                        <option value="Select Service">Select Service</option>
+                                        <option value="SIL Support">SIL Support</option>
+                                        <option value="Community Access">Community Access</option>
+                                        <option value="Household Tasks">Household Tasks</option>
                                     </select>
                                 </div>
                             ) : (
@@ -142,7 +135,7 @@ const ContactSection = ({
                                     <label className="text-[16px] mb-2 font-medium">Email:</label>
                                     <input
                                         type="email"
-                                        name="email" // Distinct Name
+                                        name="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
@@ -156,7 +149,7 @@ const ContactSection = ({
                             <div className="flex flex-col">
                                 <label className="text-[16px] mb-2 font-medium">Message:</label>
                                 <textarea
-                                    name="message" // Distinct Name
+                                    name="message"
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows="4"
