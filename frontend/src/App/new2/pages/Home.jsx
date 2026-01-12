@@ -19,7 +19,6 @@ function Home() {
                 listItems={[
                     "Personalised support tailored to your specific needs",
                     "We strive to provide a welcoming, friendly environment",
-                    "Local family-owned business",
                     "Servicing Brisbane and the greater Brisbane area"
                 ]}
                 image="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -44,7 +43,7 @@ function Home() {
                     "Welcome to Community Care and Support, your pathway to supportive and nurturing support throughout Ipswich, Logan and the greater Brisbane area. We understand the significance of fostering independence and community integration for those with disabilities. That's why we're dedicated to offering a comprehensive range of services designed to enrich the lives of our clients, including:"
                 ]}
                 paragraphstwo={[
-                    "With our passion for disability support and commitment to creating personalised, welcoming environments, we stand out as a family-owned business dedicated to the diverse needs of our community. To get started, contact us on 0418 730 264 or request a call back on this page."
+                    "With our passion for disability support and commitment to creating personalised, welcoming environments, we are dedicated to the diverse needs of our community. To get started, contact us on 0418 730 264 or request a call back on this page."
                 ]}
                 showButton={true}
             />

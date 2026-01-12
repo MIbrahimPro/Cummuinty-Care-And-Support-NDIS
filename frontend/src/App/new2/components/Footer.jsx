@@ -24,7 +24,11 @@ const Footer = () => {
                             alt="Logo"
                             className="h-48 w-48 object-contain rounded-full mx-auto"
                         />
-                        <h2 className="text-[38px] font-bold leading-tight">
+                        <h2 className="text-[32px] font-bold leading-tight">
+                            Community Care and
+                            Support Australia Pty Ltd
+                        </h2>
+                        <h2 className="text-[22px] font-bold leading-tight">
                             Providing the <br /> Support You Need
                         </h2>
                         <button className="bg-cyan hover:opacity-90 transition-opacity text-white py-[15px] px-[30px] rounded-md font-medium">

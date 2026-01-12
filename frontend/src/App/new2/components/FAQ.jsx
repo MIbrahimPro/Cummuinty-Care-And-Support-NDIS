@@ -16,6 +16,22 @@ const FAQSection = () => {
         {
             question: "How do I access NDIS services if I am new to the NDIS?",
             answer: "If you are new, you first need to confirm your eligibility. Once approved, you will have a planning meeting to determine your goals and budget, after which you can choose Community Care and Support as your provider."
+        },
+        {
+            question: "What specific types of disability services do you provide?",
+            answer: "We offer a wide range of disability services, including Supported Independent Living (SIL), assistance with daily personal activities, household tasks, community participation, travel and transport, and group/centre activities. Our goal is to provide comprehensive support tailored to your individual needs."
+        },
+        {
+            question: "How are your support workers qualified and trained?",
+            answer: "Our support workers are carefully selected and undergo rigorous training, including holding relevant certifications in disability support. They are trained in first aid, manual handling, and person-centered care to ensure they provide the highest quality of support."
+        },
+        {
+            question: "What is the NDIS and how can you help me navigate it?",
+            answer: "The National Disability Insurance Scheme (NDIS) is a government-funded scheme that provides support to people with a permanent and significant disability. Our experienced team can help you understand your eligibility, assist with the application process, and help you create a personalized care plan to make the most of your NDIS funding."
+        },
+        {
+            question: "How do you create a personalized care plan for participants?",
+            answer: "We create personalized care plans through a collaborative process. We start with a detailed consultation to understand your unique needs, goals, and preferences. We then work with you, your family, and any other relevant stakeholders to develop a tailored support plan that empowers you to achieve your goals."
         }
     ];
 

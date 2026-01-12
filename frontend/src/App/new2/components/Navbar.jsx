@@ -2,6 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { Menu, Phone, X, ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
 import { siteData } from '../data/data'; // Ensure this path matches your file structure
 
+const TopBar = () => {
+    const marqueeContent = `ABN: ${siteData.ABN} • Email: ${siteData.email} • Phone: ${siteData.phoneNumber} • Phone: ${siteData.phoneNumber2}`;
+
+    return (
+        <>
+            <style>
+                {`
+                @keyframes marquee {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-100%); }
+                }
+                .marquee-content {
+                    animation: marquee 30s linear infinite;
+                    white-space: nowrap;
+                    will-change: transform;
+                }
+                `}
+            </style>
+            <div className="bg-[#1CA4AC] text-white py-2 text-sm font-semibold lg:hidden overflow-hidden">
+                <div className="marquee-content flex">
+                    <span className="mx-8">{marqueeContent}</span>
+                    <span className="mx-8">{marqueeContent}</span>
+                </div>
+            </div>
+        </>
+    );
+};
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -78,6 +106,7 @@ const Navbar = () => {
             <header
                 className="fixed top-0 left-0 w-full z-[50]"
             >
+                <TopBar />
                 {/* Mobile Navbar Header (< lg) */}
                 <div className="lg:hidden bg-white w-full shadow-md">
                     <div className="flex justify-between items-center h-[120px] px-[10px]">
@@ -95,11 +124,18 @@ const Navbar = () => {
                             </div>
                         </a>
 
-                        {/* Phone Icon (Right) */}
-                        <div className="w-[75px] flex justify-center items-center">
-                            <a href={`tel:${siteData.telLink}`} className="text-[#1CA4AC]">
+                        {/* Phone Icons (Right) */}
+                        <div className="w-auto flex justify-center items-center gap-1">
+                            <a href={`tel:${siteData.telLink}`} className="text-[#1CA4AC] relative">
                                 <div className="p-2">
                                     <Phone size={25} className="text-cyan" />
+                                    <span className="absolute top-1 right-1 bg-[#1CA4AC] text-white rounded-full h-4 w-4 text-xs flex items-center justify-center font-bold">1</span>
+                                </div>
+                            </a>
+                            <a href={`tel:${siteData.telLink2}`} className="text-[#1CA4AC] relative">
+                                <div className="p-2">
+                                    <Phone size={25} className="text-cyan" />
+                                    <span className="absolute top-1 right-1 bg-[#1CA4AC] text-white rounded-full h-4 w-4 text-xs flex items-center justify-center font-bold">2</span>
                                 </div>
                             </a>
                         </div>
@@ -110,10 +146,12 @@ const Navbar = () => {
                 <div className="hidden lg:block w-full transition-all duration-300">
                     <div
                         className={`
-              bg-white shadow-md mx-auto transition-all duration-500 ease-in-out flex items-center justify-between rounded-[10px] w-[calc(100%-160px)]
+              bg-white shadow-md mx-auto transition-all duration-500 ease-in-out flex items-center justify-between rounded-[10px] 
+              w-[calc(100%-160px)] max-[1335px]:w-[calc(100%-80px)] 
+              px-[80px] max-[1455px]:px-[20px]
               ${isScrolled
-                                ? 'mt-0 py-[10px] px-[80px]'
-                                : '  mt-[20px] py-[10px] px-[80px]'
+                                ? 'mt-0 py-[10px]'
+                                : '  mt-[20px] py-[10px]'
                             }
             `}
                     >
@@ -124,21 +162,35 @@ const Navbar = () => {
                             </div>
                             <div className="font-bold text-gray-800 hidden xl:block text-md 2xl:text-xl">
                                 <div>Community Care and</div>
-                                <div>Support Australia</div>
+                                <div>Support Australia Pty Ltd</div>
                             </div>
                         </a>
 
                         {/* Desktop Links */}
-                        <nav className="flex items-center gap-4 h-full">
+                        <nav className="flex items-center gap-4 max-[1130px]:gap-2 h-full">
                             {siteData.menu.filter(item => item.title !== "Home").map((item, idx) => (
                                 <DesktopMenuItem key={idx} item={item} />
                             ))}
                         </nav>
 
-                        {/* Desktop Call Button */}
-                        <a href={`tel:${siteData.telLink}`} className="bg-[#1CA4AC] text-white font-inter text-[16px] font-bold px-[25px] py-[12px] rounded-[10px] hover:bg-[#158a91] transition-colors uppercase">
-                            CALL {siteData.phoneNumber}
-                        </a>
+                        {/* Desktop Call Buttons & Email */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex gap-2">
+                                {/* Button 1 */}
+                                <a href={`tel:${siteData.telLink}`} className="bg-[#1CA4AC] text-white font-inter text-[14px] font-bold px-[15px] py-[10px] rounded-[10px] hover:bg-[#158a91] transition-colors uppercase flex items-center justify-center">
+                                    <span>CALL</span>
+                                    <span className="ml-2">{siteData.phoneNumber}</span>
+                                </a>
+                                {/* Button 2 */}
+                                <a href={`tel:${siteData.telLink2}`} className="bg-[#1CA4AC] text-white font-inter text-[14px] font-bold px-[15px] py-[10px] rounded-[10px] hover:bg-[#158a91] transition-colors uppercase flex items-center justify-center">
+                                    <span>CALL</span>
+                                    <span className="ml-2">{siteData.phoneNumber2}</span>
+                                </a>
+                            </div>
+                            <div className="mt-2 text-sm text-gray-700 font-semibold">
+                                <a href={`mailto:${siteData.email}`} className="hover:text-[#1CA4AC]">{siteData.email}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -180,7 +232,7 @@ const DesktopMenuItem = ({ item }) => {
     const hasChildren = item.children && item.children.length > 0;
 
     return (
-        <div className="relative group h-full flex items-center px-[10px]">
+        <div className="relative group h-full flex items-center px-[10px] max-[1130px]:px-[2px]">
             <a href={item.link} className="text-black hover:text-[#1CA4AC] text-[14px] font-inter uppercase flex items-center transition-colors font-semibold">
                 {item.title}
                 {hasChildren && <ChevronDown size={14} className="ml-2" />}

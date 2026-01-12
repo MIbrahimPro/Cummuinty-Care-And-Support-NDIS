@@ -1,11 +1,11 @@
 // data/data.js
 // data/data.js
 export const siteData = {
-    phoneNumber: "0492 265 171",
-    telLink: "0492 265 171",
-    phoneNumber2: "0449 202 937",
-    telLink2: "0449202937",
-    email: "Info@communitycare.com.au",
+    phoneNumber: "+61 492 265 171",
+    telLink: "+61492265171",
+    phoneNumber2: "+61 449 202 937",
+    telLink2: "+61449202937",
+    email: "ccasuppt@hotmail.com",
     Address: "54 outlook place, Durack 4077, QLD",
     ABN: "12 684 957 819",
     menu: [
@@ -19,6 +19,9 @@ export const siteData = {
                 { title: "Support with Household Tasks", link: "/services/household-tasks" },
                 { title: "Community Participation", link: "/services/community-participation" },
                 { title: "Travel & Transport", link: "/services/travel-transport" },
+                { title: "Group/Centre Activities", link: "/services/group-centre-activities" },
+                { title: "Personal Activities", link: "/services/personal-activities" },
+                { title: "Development - Life Skills", link: "/services/development-life-skills" },
             ],
         },
         {
@@ -34,6 +37,9 @@ export const siteData = {
                         { title: "Household Tasks Brisbane", link: "/locations/brisbane/household-tasks" },
                         { title: "Community Participation Brisbane", link: "/locations/brisbane/community-participation" },
                         { title: "Travel & Transport Brisbane", link: "/locations/brisbane/travel-transport" },
+                        { title: "Group/Centre Activities Brisbane", link: "/locations/brisbane/group-centre-activities" },
+                        { title: "Personal Activities Brisbane", link: "/locations/brisbane/personal-activities" },
+                        { title: "Development - Life Skills Brisbane", link: "/locations/brisbane/development-life-skills" },
                     ],
                 },
                 {
@@ -45,6 +51,9 @@ export const siteData = {
                         { title: "Household Tasks Logan", link: "/locations/logan/household-tasks" },
                         { title: "Community Participation Logan", link: "/locations/logan/community-participation" },
                         { title: "Travel & Transport Logan", link: "/locations/logan/travel-transport" },
+                        { title: "Group/Centre Activities Logan", link: "/locations/logan/group-centre-activities" },
+                        { title: "Personal Activities Logan", link: "/locations/logan/personal-activities" },
+                        { title: "Development - Life Skills Logan", link: "/locations/logan/development-life-skills" },
                     ],
                 },
                 {
@@ -56,6 +65,9 @@ export const siteData = {
                         { title: "Household Tasks Ipswich", link: "/locations/ipswich/household-tasks" },
                         { title: "Community Participation Ipswich", link: "/locations/ipswich/community-participation" },
                         { title: "Travel & Transport Ipswich", link: "/locations/ipswich/travel-transport" },
+                        { title: "Group/Centre Activities Ipswich", link: "/locations/ipswich/group-centre-activities" },
+                        { title: "Personal Activities Ipswich", link: "/locations/ipswich/personal-activities" },
+                        { title: "Development - Life Skills Ipswich", link: "/locations/ipswich/development-life-skills" },
                     ],
                 },
                 {
@@ -67,6 +79,9 @@ export const siteData = {
                         { title: "Household Tasks Gold Coast", link: "/locations/gold-coast/household-tasks" },
                         { title: "Community Participation Gold Coast", link: "/locations/gold-coast/community-participation" },
                         { title: "Travel & Transport Gold Coast", link: "/locations/gold-coast/travel-transport" },
+                        { title: "Group/Centre Activities Gold Coast", link: "/locations/gold-coast/group-centre-activities" },
+                        { title: "Personal Activities Gold Coast", link: "/locations/gold-coast/personal-activities" },
+                        { title: "Development - Life Skills Gold Coast", link: "/locations/gold-coast/development-life-skills" },
                     ],
                 },
                 {
@@ -78,6 +93,9 @@ export const siteData = {
                         { title: "Household Tasks Sunshine Coast", link: "/locations/sunshine-coast/household-tasks" },
                         { title: "Community Participation Sunshine Coast", link: "/locations/sunshine-coast/community-participation" },
                         { title: "Travel & Transport Sunshine Coast", link: "/locations/sunshine-coast/travel-transport" },
+                        { title: "Group/Centre Activities Sunshine Coast", link: "/locations/sunshine-coast/group-centre-activities" },
+                        { title: "Personal Activities Sunshine Coast", link: "/locations/sunshine-coast/personal-activities" },
+                        { title: "Development - Life Skills Sunshine Coast", link: "/locations/sunshine-coast/development-life-skills" },
                     ],
                 },
                 {
@@ -89,6 +107,9 @@ export const siteData = {
                         { title: "Household Tasks Toowoomba", link: "/locations/toowoomba/household-tasks" },
                         { title: "Community Participation Toowoomba", link: "/locations/toowoomba/community-participation" },
                         { title: "Travel & Transport Toowoomba", link: "/locations/toowoomba/travel-transport" },
+                        { title: "Group/Centre Activities Toowoomba", link: "/locations/toowoomba/group-centre-activities" },
+                        { title: "Personal Activities Toowoomba", link: "/locations/toowoomba/personal-activities" },
+                        { title: "Development - Life Skills Toowoomba", link: "/locations/toowoomba/development-life-skills" },
                     ],
                 },
             ],
@@ -112,7 +133,7 @@ export const servicesData = [
             imagePosition: "left",
             paragraphs: [
                 "At Community Care and Support Australia, we specialise in providing compassionate and personalised Supported Independent Living (SIL) services for individuals in Ipswich, Logan and the greater Brisbane area. Our primary clients include NDIS participants who seek to live independently while receiving the tailored support they need to thrive. We cater to individuals with various levels of disability, ensuring they can live comfortably and confidently within a nurturing environment.",
-                "Our SIL services are designed to promote independence while offering assistance with daily tasks, personal care, transport and community integration. As a local, family-owned business deeply rooted in the Ipswich community, we understand the unique needs of our participants and are committed to empowering them to lead fulfilling lives.",
+                "Our SIL services are designed to promote independence while offering assistance with daily tasks, personal care, transport and community integration. As a local provider deeply rooted in the Ipswich community, we understand the unique needs of our participants and are committed to empowering them to lead fulfilling lives.",
                 "With a warm and supportive approach, Community Care and Support Australia provides reliable, high-quality care that aligns with your goals and enhances your quality of life. To find out more about how we can support you, contact us on 0492 265 171 or request a call back on this page."
             ],
             showButton: true
@@ -144,7 +165,7 @@ export const servicesData = [
             paragraphs: [
                 "Community Care and Support Australia offers compassionate and personalised support for NDIS participants in Ipswich, Logan and the greater Brisbane area who live in shared accommodations. Our services focus on assisting with daily tasks, including cooking, cleaning and personal care, while fostering a collaborative and supportive living environment.",
                 "Our target audience includes individuals with disabilities who seek to maintain their independence within a shared living arrangement. We tailor our support to meet the unique needs of each participant, ensuring they can confidently manage daily responsibilities while enjoying the companionship of shared living.",
-                "As a local, family-owned business deeply connected to the Ipswich community, Community Care and Support Australia is dedicated to empowering individuals to live fulfilling lives in a safe and nurturing environment. We also provide Supported Independent Living (SIL) services, community participation and transport. Contact us on 0418 730 264 or request a call back on this page."
+                "As a local provider deeply connected to the Ipswich community, Community Care and Support Australia is dedicated to empowering individuals to live fulfilling lives in a safe and nurturing environment. We also provide Supported Independent Living (SIL) services, community participation and transport. Contact us on 0418 730 264 or request a call back on this page."
             ],
             showButton: true
         },
@@ -190,7 +211,7 @@ export const servicesData = [
             paragraphs: [
                 "At Community Care and Support Australia, we provide warm and personalised assistance with household tasks for NDIS participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to help individuals with disabilities maintain a clean, organised and comfortable home environment, empowering them to live independently and confidently.",
                 "Our target audience includes NDIS participants who need support with everyday household activities such as cleaning, laundry and meal preparation. We tailor our services to meet each participant's unique needs, ensuring they can enjoy a safe and well-maintained home.",
-                "As a local, family-owned business with deep roots in Ipswich, Community Care and Support Australia is committed to offering compassionate and reliable care that enhances the quality of life for our participants. We take pride in our professional yet warm approach, making us a trusted partner in your journey towards greater independence.",
+                "With deep roots in Ipswich, Community Care and Support Australia is committed to offering compassionate and reliable care that enhances the quality of life for our participants. We take pride in our professional yet warm approach, making us a trusted partner in your journey towards greater independence.",
                 "To find out more about how we can support you, contact us on 0418 730 264 or request a call back on this page. We also provide Supported Independent Living (SIL) services, support for shared living, community participation and transport.",
             ],
             showButton: true
@@ -252,7 +273,7 @@ export const servicesData = [
             paragraphs: [
                 "Community Care and Support Australia offers warm and personalised NDIS community participation services in Ipswich, Logan and the greater Brisbane area, designed to help individuals with disabilities engage fully in their community. Our services focus on fostering social connections, encouraging participation in local activities and building meaningful relationships that enhance the overall well-being of our participants.",
                 "Our target audience includes NDIS participants who seek to be more active in their community, whether through social events, recreational activities or volunteering opportunities. We tailor our support to each individual’s interests and goals, empowering them to take part in community life with confidence and enjoyment.",
-                "As a local, family-owned business deeply embedded in the Ipswich community, Community Care and Support Australia is committed to providing compassionate and professional care that supports our participants in leading fulfilling and socially connected lives.",
+                "As a local provider deeply embedded in the Ipswich community, Community Care and Support Australia is committed to providing compassionate and professional care that supports our participants in leading fulfilling and socially connected lives.",
                 "We also provide Supported Independent Living (SIL) services, daily task support, shared living support and transport. Contact us on 0418 730 264 or request a call back on this page.",
 
             ],
@@ -297,7 +318,7 @@ export const servicesData = [
             paragraphs: [
                 "Community Care and Support Australia provides reliable and compassionate NDIS travel and transport services for participants in Ipswich, Logan and the greater Brisbane area. Our services are designed to ensure safe and convenient transportation to medical appointments, social activities and community events, enabling participants to maintain their independence and stay connected with their community.",
                 "Our target audience includes NDIS participants who require assistance with travel and transport, ensuring they can access essential services and participate in the activities that matter most to them. We offer fully insured, accessible vehicles and caring companions who understand and cater to each participant's unique needs.",
-                "As a local, family-owned business, Community Care and Support Australia is committed to delivering professional, warm and personalised support that enhances the quality of life for our participants in Ipswich, Logan and the greater Brisbane area. We also provide Supported Independent Living (SIL) services, as well as support for shared living and daily tasks. To find out how we can help meet your travel and transport needs, give us a call or request a call back on this page."
+                "Community Care and Support Australia is committed to delivering professional, warm and personalised support that enhances the quality of life for our participants in Ipswich, Logan and the greater Brisbane area. We also provide Supported Independent Living (SIL) services, as well as support for shared living and daily tasks. To find out how we can help meet your travel and transport needs, give us a call or request a call back on this page."
             ],
             showButton: true
         },
@@ -329,6 +350,120 @@ export const servicesData = [
             showButton: true
         },
     },
+    {
+        id: 6,
+        slug: "group-centre-activities",
+        image: "https://images.unsplash.com/photo-1579226952472-3e3518a1a35c?q=80&w=800",
+        title: "Group/Centre Activities",
+        description: "Participate in engaging group activities in a supportive centre-based environment. Our programs are designed to foster social skills, creativity, and a sense of community.",
+        link: "/services/group-centre-activities",
+        ss1: {
+            title: "Vibrant Group & Centre Activities",
+            image: "https://picsum.photos/1200",
+            imagePosition: "left",
+            paragraphs: [
+                "Community Care and Support Australia is excited to offer dynamic group and centre-based activities for NDIS participants in Ipswich, Logan, and the greater Brisbane area. Our programs are designed to create a vibrant, inclusive atmosphere where individuals can socialise, learn new skills, and participate in a variety of recreational and educational activities.",
+                "We cater to NDIS participants of all ages and abilities who are looking to connect with others, explore new hobbies, and be part of an active community. From arts and crafts workshops to group fitness sessions and social outings, our activities are tailored to the interests and goals of our participants.",
+                "As a local provider, we are deeply committed to enhancing the lives of individuals in our community. Our professional and caring team ensures a safe, supportive, and fun environment for everyone. Join us to build new friendships and create lasting memories. Contact us to learn more about our activity schedule."
+            ],
+            showButton: true
+        },
+        ss2: {
+            title: "What Our Activities Involve",
+            image: "https://picsum.photos/1200",
+            imagePosition: "right",
+            paragraphs: [
+                "Our group and centre-based activities offer a wide range of opportunities for engagement and skill development. These programs are structured to promote social interaction, personal growth, and enjoyment in a supported setting."
+            ],
+            listItems: [
+                "Creative Arts & Crafts: Workshops for painting, drawing, pottery, and other crafts.",
+                "Health & Wellness: Group fitness classes, yoga, and mindfulness sessions.",
+                "Life Skills Development: Cooking classes, budgeting workshops, and digital literacy training.",
+                "Social & Recreational Outings: Trips to local attractions, community events, and parks.",
+                "Games & Entertainment: Board games, movie days, and themed social gatherings."
+            ],
+            paragraphs2: [
+                "These activities are designed to be accessible and enjoyable for everyone, fostering a sense of belonging and empowering participants to lead active, fulfilling lives. Enquire with Community Care and Support Australia to get involved."
+            ],
+            showButton: true
+        }
+    },
+    {
+        id: 7,
+        slug: "personal-activities",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
+        title: "Personal Activities",
+        description: "Receive one-on-one support for personal activities and daily routines. We assist with everything from personal care to managing daily tasks, helping you live with dignity and independence.",
+        link: "/services/personal-activities",
+        ss1: {
+            title: "Dedicated One-on-One Support",
+            image: "https://picsum.photos/1200",
+            imagePosition: "left",
+            paragraphs: [
+                "At Community Care and Support Australia, we provide dedicated one-on-one support for personal activities to NDIS participants across Ipswich, Logan, and Brisbane. Our service is centered on respecting your privacy and dignity while assisting with daily personal tasks to help you live as independently as possible.",
+                "This service is ideal for individuals who require tailored assistance with their daily routines, including personal care, hygiene, dressing, and mobility. Our compassionate support workers are trained to provide sensitive and professional care that meets your specific needs and preferences.",
+                "As a business, we pride ourselves on building trusting relationships with our participants. We work closely with you and your family to create a personalised care plan that supports your independence and enhances your quality of life. For discreet and reliable support, contact Community Care and Support Australia."
+            ],
+            showButton: true
+        },
+        ss2: {
+            title: "Areas of Personal Activity Support",
+            image: "https://picsum.photos/1200",
+            imagePosition: "right",
+            paragraphs: [
+                "Our support for personal activities is comprehensive and adapted to the individual needs of each participant. We focus on promoting independence while ensuring safety and well-being."
+            ],
+            listItems: [
+                { heading: "Personal Hygiene", text: "Assistance with showering, bathing, oral hygiene, and grooming." },
+                { heading: "Dressing & Undressing", text: "Support with choosing outfits and managing clothing." },
+                { heading: "Mobility Support", text: "Help with moving around the home and community safely." },
+                { heading: "Mealtime Assistance", text: "Support with eating and drinking, if required." },
+                { heading: "Continence Management", text: "Discreet and respectful assistance with toileting needs." }
+            ],
+            paragraphs2: [
+                "This personalised support is crucial for enabling individuals to manage their daily lives with confidence and dignity. Reach out to us to learn more about how we can tailor our services for you."
+            ],
+            showButton: true
+        }
+    },
+    {
+        id: 8,
+        slug: "development-life-skills",
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800",
+        title: "Development - Life Skills",
+        description: "Enhance your independence by developing essential life skills. Our tailored programs cover areas like financial management, communication, and problem-solving to empower you in daily life.",
+        link: "/services/development-life-skills",
+        ss1: {
+            title: "Building Skills for Greater Independence",
+            image: "https://picsum.photos/1200",
+            imagePosition: "left",
+            paragraphs: [
+                "Community Care and Support Australia is dedicated to empowering NDIS participants in Ipswich, Logan, and Brisbane by helping them develop crucial life skills. Our programs are designed to build confidence and independence, enabling individuals to take greater control of their lives.",
+                "Our services are perfect for those who want to learn or improve practical skills for daily living. This includes financial literacy, communication, problem-solving, household management, and using public transport. We work with you to identify your goals and create a customised learning plan.",
+                "Our experienced and patient support workers use a hands-on, encouraging approach to help you master new skills at your own pace. As a local provider, we are committed to providing practical and effective support that makes a real difference. Contact us to start your skill development journey."
+            ],
+            showButton: true
+        },
+        ss2: {
+            title: "Key Life Skills We Help Develop",
+            image: "https://picsum.photos/1200",
+            imagePosition: "right",
+            paragraphs: [
+                "Our life skills development programs are tailored to meet individual goals, focusing on practical abilities that enhance independence and community participation."
+            ],
+            listItems: [
+                "Financial Management: Budgeting, banking, and handling money.",
+                "Travel & Transport Training: Using public transport and planning journeys.",
+                "Communication Skills: Effective communication and social interaction techniques.",
+                "Problem-Solving: Developing strategies to handle everyday challenges.",
+                "Household Management: Skills for cooking, cleaning, and maintaining a home."
+            ],
+            paragraphs2: [
+                "By focusing on these key areas, we help participants build a strong foundation for a more independent and self-sufficient future. Get in touch with Community Care and Support Australia to learn more."
+            ],
+            showButton: true
+        }
+    }
 ];
 
 

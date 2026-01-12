@@ -80,7 +80,7 @@ const WhoWeAreSection = () => {
 
                     <p className="text-[16px] text-gray-700 leading-relaxed">
                         At Community Care and Support, we are proud to be a part of the {renderSmartText("Ipswich")}, {renderSmartText("Logan")} and the greater {renderSmartText("Brisbane")} communities.
-                        Our long-standing local presence, family-owned values, and unwavering commitment to our participants set us apart as a trusted provider of NDIS support services.
+                        Our long-standing local presence, and unwavering commitment to our participants set us apart as a trusted provider of NDIS support services.
                     </p>
 
                     <div className="pt-4">
